@@ -21,8 +21,8 @@ Additional ones: bottom three; at a later stage but also fundamental.
 * Suggested video: Another DAy, Another Billion Packets
 
 ### AWS Architecture Center
-* (https://aws.amazon.com/architecture)
+* https://aws.amazon.com/architecture
 
 ### AWS Answers
-* (https://aws.amazon.com/answers/)
+* https://aws.amazon.com/answers/
 
