@@ -14,7 +14,7 @@
   * On-Demand _...for short-term, irregular workloads that cannot be interrupted..._
   * Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term...._ 
   * Reserved Instances _...assigned to a specific Availability Zone, they provide a capacity reservation..._
-  * Spot instances _...AWS can re-claim any time; 2 minute warning..._
+  * Spot instances _...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning..._
   * Dedicated Hosts 
   
   
