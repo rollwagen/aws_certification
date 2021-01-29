@@ -3,6 +3,14 @@
 ## Module 1
 ### Additional resources / Links 
 * [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
+### Module 2
+* Amazon EC2 instance types (5):
+ * General purpose instances
+ * Compute optimized instances
+ * Memory optimized instances
+ * Accelerated computing instances
+ * Storage optimized instances
+
 
 
 # AWS Certified Solutions Architect
