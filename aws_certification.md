@@ -6,8 +6,8 @@
 ### Module 2
 * Amazon EC2 instance types (5): General purpose, Compute optimized, Memory optimized, Accelerated computing, Storage optimized 
 * Amazon EC2 pricing
-** On-Demand
-** Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term..._ 
+  * On-Demand
+  * Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term..._ 
 
 
 
