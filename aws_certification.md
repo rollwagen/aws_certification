@@ -1,7 +1,7 @@
-# AWS Cloud Practitioner Essentials 
+## AWS Cloud Practitioner Essentials 
 
-## Module 1
-### Additional resources / Links 
+### Module 1
+#### Additional resources / Links 
 * [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
 ### Module 2
 * Amazon EC2 instance types (5):
@@ -21,9 +21,9 @@
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
 
-# AWS Certified Solutions Architect
+## AWS Certified Solutions Architect
 
-## Documentation to read
+### Documentation to read
 
 * [AWS Documentation](https://docs.aws.amazon.com/)
 * [AWS FAQs](https://aws.amazon.com/faqs/)
@@ -39,13 +39,13 @@
 Read Whitepapers initially (top 3), study thoroughly when preparing for exam.
 Additional ones: bottom three; at a later stage but also fundamental.
 
-### Videos
+#### Videos
 * AWS Event Videos
 * Suggested video: Another Day, Another Billion Packets
 
-### AWS Architecture Center
+#### AWS Architecture Center
 * https://aws.amazon.com/architecture
 
-### AWS Answers
+#### AWS Answers
 * https://aws.amazon.com/answers/
 
