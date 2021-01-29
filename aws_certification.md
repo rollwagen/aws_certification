@@ -1,3 +1,10 @@
+# AWS Cloud Practitioner Essentials 
+
+## Module 1
+### Additional resources / Links 
+* [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
+
+
 # AWS Certified Solutions Architect
 
 ## Documentation to read
@@ -18,7 +25,7 @@ Additional ones: bottom three; at a later stage but also fundamental.
 
 ### Videos
 * AWS Event Videos
-* Suggested video: Another DAy, Another Billion Packets
+* Suggested video: Another Day, Another Billion Packets
 
 ### AWS Architecture Center
 * https://aws.amazon.com/architecture
