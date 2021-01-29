@@ -1,4 +1,4 @@
-> *Quick links:*
+> *Quick links:* \
 > [AWS Whitepapers](https://aws.amazon.com/whitepapers/) \
 > [AWS Documentation](https://docs.aws.amazon.com/index.html) 
 
