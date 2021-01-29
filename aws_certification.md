@@ -24,7 +24,10 @@
   * dynamic scaling - _responds to changing demand_
   * predictive scaling - _automatically schedules...based on predicted demand_ 
 * Elastic *Load Balancing* (ELB) - _Regional_ level
-
+* Messaging and queuing
+  * **loosely coupled** _...an architecture where if one component fails, it is isolated and therefore won't cause cascading failures throughout the whole system..._
+  * Amazon Simple Queue Service (SQS)
+  * Amazon Simple Notification Service (SNS)
   
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
