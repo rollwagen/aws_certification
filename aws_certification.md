@@ -1,5 +1,5 @@
-> [AWS Whitepapers](https://aws.amazon.com/whitepapers/)
-> [AWS Documentation] (https://docs.aws.amazon.com/index.html) 
+> [AWS Whitepapers](https://aws.amazon.com/whitepapers/) \
+> [AWS Documentation](https://docs.aws.amazon.com/index.html) 
 
 ## AWS Cloud Practitioner Essentials 
 
