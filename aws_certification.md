@@ -15,7 +15,9 @@
   * Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term...._ 
   * Reserved Instances _...assigned to a specific Availability Zone, they provide a capacity reservation..._
   * Spot instances _...AWS can re-claim any time; 2 minute warning..._
-  * Dedicated Hosts \
+  * Dedicated Hosts 
+  
+  
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
 
