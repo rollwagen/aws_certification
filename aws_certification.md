@@ -1,3 +1,5 @@
+* [AWS Whitepapers](https://aws.amazon.com/whitepapers/)
+
 ## AWS Cloud Practitioner Essentials 
 
 ### Module 1
@@ -16,9 +18,10 @@
   * Reserved Instances _...assigned to a specific Availability Zone, they provide a capacity reservation..._
   * Spot instances _...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning..._
   * Dedicated Hosts 
-* Amazon EC2 Auto Scaling (2)
+* Amazon EC2 *Auto Scaling* (2)
   * dynamic scaling - _responds to changing demand_
   * predictive scaling - _automatically schedules...based on predicted demand_ 
+* Elastic *Load Balancing* (ELB) - _Regional_ level
 
   
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
