@@ -4,19 +4,22 @@
 #### Additional resources / Links 
 * [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
 ### Module 2
-* Amazon EC2 instance types (5):
+* Amazon EC2 *instance types* (5):
   * General purpose
   * Compute optimized
   * Memory optimized
   * Accelerated computing
   * Storage optimized 
-* Amazon EC2 pricing
+* Amazon EC2 *pricing*
   * On-Demand _...for short-term, irregular workloads that cannot be interrupted..._
   * Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term...._ 
   * Reserved Instances _...assigned to a specific Availability Zone, they provide a capacity reservation..._
   * Spot instances _...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning..._
   * Dedicated Hosts 
-  
+* Amazon EC2 Auto Scaling (2)
+  * dynamic scaling - _responds to changing demand_
+  * predictive scaling - _automatically schedules...based on predicted demand_ 
+
   
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
