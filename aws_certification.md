@@ -28,6 +28,18 @@
   * **loosely coupled** _...an architecture where if one component fails, it is isolated and therefore won't cause cascading failures throughout the whole system..._
   * Simple Queue Service (SQS) - a message queuing service; _... fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless application..._; data in message='payload'
   * Simple Notification Service (SNS) - a publish/subscribe service; _...messaging service for both application-to-application (A2A) and application-to-person (A2P) communication..._
+* AWS **Lambda** - _serverless compute service_; run time <15min
+* Amazon Elastic Container Service (Amazon **ECS**) - _...a container management system..._
+* Amazon Elastic Kubernetes Service (Amazon **EKS**) - _... a fully managed service that you can use to run Kubernetes on AWS..._
+* Amazon **Fargate** - _...serverless compute engine for containers. It works with both Amazon ECS and Amazon EKS..._
+* [Overview Compute Services](https://aws.amazon.com/products/compute/)
+  * Instances (Virtual machines)
+  * Containers
+  * Serverless
+  * Edge and Hybrid
+
+- [ ] Difference between ECS and EKS \
+- [ ] Understand Fargate better
   
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
