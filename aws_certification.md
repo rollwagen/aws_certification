@@ -54,6 +54,28 @@
   
 ### Module 3
 
+* **Region** (=separate geographic area) selection criteria (four business factors):
+  * **Compliance** with data governance and legal requirements
+  * **Proximity** to your customers
+  * **Feature availability** - Available services within a Region
+  * **Pricing** - each region has different price sheet
+
+* **Availability zone** (**AZ**)
+  * each region = many datacenters;  availability zone = one or many datacenters
+  * ...as a best practice with AWS, we always recommend you run across at least two Availability Zones in a Region.....
+  * many services are on a regional level already (e.g. ELB); regionally scoped service = meaning they run synchronously across multiple AZs 
+
+* **Edge locations**
+  * CDN = Content Delivery Network 
+  * Amazon's CDN = Amazon **Cloudfront**
+  * Cloudfront uses 'Edge locations'
+  * Also run 'Amazon Route 53' - highly available and scalable cloud Domain Name System (DNS) web service
+
+* **AWS Outposts** - where AWS will basically install a fully operational mini Region, right inside your own data center. 
+
+
+
+
 
 
 
