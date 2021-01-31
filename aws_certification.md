@@ -54,7 +54,8 @@
   
 ### Module 3
 
-* **Region** (=separate geographic area) selection criteria (four business factors):
+* **Region** -  separate geographic area; consists of _two or more_ Availability Zones (AZ)
+* Sselection criteria for choosing a region (four business factors):
   * **Compliance** with data governance and legal requirements
   * **Proximity** to your customers
   * **Feature availability** - Available services within a Region
@@ -73,7 +74,14 @@
 
 * **AWS Outposts** - where AWS will basically install a fully operational mini Region, right inside your own data center. 
 
+* Ways to interact with AWS services:
+  * AWS Mangement Console
+  * AWS Command line interface (CLI)
+  * SDKs
+* AWS **Elastic Beanstalk** - ...service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python... [link](https://aws.amazon.com/elasticbeanstalk/)
+* AWS **CloudFormation** - ...infrastructure as code tool...
 
+- [ ] **TODO** (Key-)differences between AWS CloudFormation and Terraform
 
 
 
