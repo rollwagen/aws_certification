@@ -83,7 +83,26 @@
 
 - [ ] **TODO** (Key-)differences between AWS CloudFormation and Terraform
 
+### Module 4
 
+* Amazon Virtual Private Cloud (**VPC**) - logically isolated (network) section; essentially your own private network in AWS
+* **Internet gateway** - to allow public traffic from the internet to access your VPC
+* **Virtual private gateway** - enables you to establish a virtual private network (VPN) connection between your VPC and a private network
+* **AWS Direct Connect**  - a service that enables establishing a dedicated private connection between your DC and a VPC; need to work with a Direct Connect partner
+* _Note:_ ...a VPC can have multiple types of gateways attached ...
+
+* ...only technical reason to use subnets in a VPC is to control access to the gateways....public subnets have access to the internet gateway; the private subnets do not
+* Network access control lists (**ACL**s) - virtual firewall that controls inbound and outbound traffic at the _subnet level_.
+  * ...Each AWS account includes a default network ACL...whcih allows all inbound and outbound traffic
+* **Security groups** - virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance _= EC 2 instance level_
+* _Note:_ Security group = stateful;  Network ACL = stateless
+
+* Amazon Route 53 (DNS) routing policies:
+  * routing policies
+  * latency-based routing
+  * geolocation DNS
+  * geoproximity
+  * weighted round robin.
 
 
 
