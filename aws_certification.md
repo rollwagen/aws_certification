@@ -104,6 +104,42 @@
   * geoproximity
   * weighted round robin.
 
+### Module 5
+
+* EC2 instance - local storage called _instance store volumes_; volumes are physically attached to the (EC2-)host. **ephemeral!** (temporary)
+
+* Amazon Elastic Block Store (Amazon **EBS**); virtual harddrives = EBS volumes
+* EBS snapshot -  incremental backup.
+
+* Amazon Simple Storage Service (Amazon *S3*) -  object-level storage; 11 nines of durability; max file size 5TB
+* S3 Amazon S3 storage classes; two factors: (1) how often retrieve data; (2) how available data needs to be; min 3 AZs (_regional_ service)
+  * S3 Standard - data stored in at least 3 AZs
+  * S3 Standard-Infrequent Access (S3 Standard-IA)
+  * S3 One Zone-Infrequent Access (S3 One Zone-IA)
+  * S3 Intelligent-Tiering
+  * S3 Glacier
+  * S3 Glacier Deep Archive
+
+* Amazon Elastic File System (Amazon **EFS**) - fully managed elastic NFS file system; scalable.
+* Note: for **EFS** on-premises servers can access Amazon EFS using AWS Direct Connect.
+
+Amazon EBS | Amazon EFS
+------------ | -------------
+Volumes EC2 instance attached	|	Multiple instances can read/write
+AZ level resource; need be same AZ as EC2 instance		|	Regional resource
+Volumes to not automatically scale |	Automatically scales
+
+
+* Amazon Relational Database Service (Amazon **RDS**) - managed service that enables you to run relational databases in the AWS Cloud.
+* RDS services includes: automated patching, backups, redundancy, failover, disaster recovery
+* Amazon RDS is available on six database engines
+  * MySQL
+  * PostgreSQL
+  * MariaDB
+  * Oracle
+  * Microsoft SQL Server
+* Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
+
 
 
 
