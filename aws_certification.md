@@ -15,35 +15,35 @@
 
 ### Module 2
 
-* Amazon EC2 **instance types** (5):
+* Amazon **EC2 instance types** (5):
   * General purpose
   * Compute optimized
   * Memory optimized
   * Accelerated computing
   * Storage optimized
 
-* Amazon EC2 **pricing**
-  * On-Demand _...for short-term, irregular workloads that cannot be interrupted..._
-  * Savings Plan _...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term...._
-  * Reserved Instances _...assigned to a specific Availability Zone, they provide a capacity reservation... either 1 year or 3 years..._
-  * Spot instances _...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning..._
+* Amazon **EC2 pricing**
+  * On-Demand - ...for short-term, irregular workloads that cannot be interrupted...
+  * Savings Plan - ...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term....
+  * Reserved Instances - ...assigned to a specific Availability Zone, they provide a capacity reservation... either 1 year or 3 years...
+  * Spot instances - ...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning...
   * Dedicated Hosts
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
 * Amazon EC2 **Auto Scaling** (2)
-  * dynamic scaling - _responds to changing demand_
-  * predictive scaling - _automatically schedules...based on predicted demand_
+  * _dynamic_ scaling - responds to changing demand
+  * _predictive_ scaling - automatically schedules...based on predicted demand
 * Elastic Load Balancing (**ELB**) - _Regional_ level
-* Messaging and queuing
-  * **loosely coupled** _...an architecture where if one component fails, it is isolated and therefore won't cause cascading failures throughout the whole system..._
+* **Messaging and queuing**
+  * Note: **loosely coupled** - ...an architecture where if one component fails, it is isolated and therefore won't cause cascading failures throughout the whole system...
   * Simple Queue Service (**SQS**) - a message queuing service; _...fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless application..._; data in message='payload'
   * Simple Notification Service (**SNS**) - a publish/subscribe service; _...messaging service for both application-to-application (A2A) and application-to-person (A2P) communication..._
-* AWS **Lambda** - _serverless compute service_; run time <15min
+* AWS **Lambda** - serverless compute service; run time <15min
 * Amazon Elastic Container Service (Amazon **ECS**) - _...a container management system..._
 * Amazon Elastic Kubernetes Service (Amazon **EKS**) - _... a fully managed service that you can use to run Kubernetes on AWS..._
 * Amazon **Fargate** - _...serverless compute engine for containers. It works with both Amazon ECS and Amazon EKS..._
 
-* [Overview Compute Services](https://aws.amazon.com/products/compute/)
+* Overview Compute Services [link](https://aws.amazon.com/products/compute/)
   * Instances (Virtual machines)
   * Containers
   * Serverless
@@ -86,10 +86,10 @@
 ### Module 4
 
 * Amazon Virtual Private Cloud (**VPC**) - logically isolated (network) section; essentially your own private network in AWS
-* **Internet gateway** - to allow public traffic from the internet to access your VPC
-* **Virtual private gateway** - enables you to establish a virtual private network (VPN) connection between your VPC and a private network
-* **AWS Direct Connect**  - a service that enables establishing a dedicated private connection between your DC and a VPC; need to work with a Direct Connect partner
-* _Note:_ ...a VPC can have multiple types of gateways attached ...
+  * **Internet gateway** - to allow public traffic from the internet to access your VPC
+  * **Virtual private gateway** - enables you to establish a virtual private network (VPN) connection between your VPC and a private network
+  * **AWS Direct Connect**  - a service that enables establishing a dedicated private connection between your DC and a VPC; need to work with a Direct Connect partner
+_Note:_ ...a VPC can have multiple types of gateways attached ...
 
 * ...only technical reason to use subnets in a VPC is to control access to the gateways....public subnets have access to the internet gateway; the private subnets do not
 * Network access control lists (**ACL**s) - virtual firewall that controls inbound and outbound traffic at the _subnet level_.
@@ -131,14 +131,14 @@ Volumes to not automatically scale | Automatically scales
 
 
 * Amazon Relational Database Service (Amazon **RDS**) - managed service that enables you to run relational databases in the AWS Cloud.
-* RDS services includes: automated patching, backups, redundancy, failover, disaster recovery
-* Amazon RDS is available on six database engines
-  * (1) MySQL
-  * (2) PostgreSQL
-  * (3) MariaDB
-  * (4) Oracle
-  * (5) Microsoft SQL Server
-  * (6) Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
+* **RDS** services includes: automated patching, backups, redundancy, failover, disaster recovery
+* Amazon **RDS** is available on _six database engines_
+  * MySQL
+  * PostgreSQL
+  * MariaDB
+  * Oracle
+  * Microsoft SQL Server
+  * Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
 
 * Amazon **DynamoDB** - non-relationsl, NoSQL database; key-value and document database service; serverless.
 
@@ -150,9 +150,9 @@ Volumes to not automatically scale | Automatically scales
 
 * Additional database services
   * Amazon **DocumentDB** - document database service; MongoDB compatible.
-  * Amazon **Neptune** - graph database service. 
+  * Amazon **Neptune** - graph database service.
   * Amazon **Quantum Ledger Database** (Amazon _QLDB_) - ledger database service; immutable system of record
-  * Amazon Managed Blockchain
+  * Amazon **Managed Blockchain**
   * Amazon **ElastiCache** - service adding caching layers on top db; supports two types of data stores: _Redis_ and _Memcached_.
   * Amazon **DynamoDB Accelerator** - in-memory cache for DynamoDB; improving read-times.
 
