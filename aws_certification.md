@@ -6,14 +6,14 @@
 
 ## AWS Cloud Practitioner Essentials
 
-### Module 1
+### Module 1: INTRODUCTION
 
 #### Definitions / Additional resources / Links
 * **Cloud computing**="...on-demand delivery of IT resources over the internet with pay-as-you-go pricing."
 * [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
 
 
-### Module 2
+### Module 2: COMPUTE IN THE CLOUD
 
 * Amazon **EC2 instance types** (5):
   * General purpose
@@ -52,7 +52,7 @@
 - [ ] **TODO** Difference between ECS and EKS
 - [ ] **TODO** Understand Fargate better
   
-### Module 3
+### Module 3: GLOBAL INFRASTRUCTURE AND RELIABILITY
 
 * **Region** -  separate geographic area; consists of _two or more_ Availability Zones (AZ)
 * Sselection criteria for choosing a region (four business factors):
@@ -83,7 +83,7 @@
 
 - [ ] **TODO** (Key-)differences between AWS CloudFormation and Terraform
 
-### Module 4
+### Module 4: NETWORKING
 
 * Amazon Virtual Private Cloud (**VPC**) - logically isolated (network) section; essentially your own private network in AWS
   * **Internet gateway** - to allow public traffic from the internet to access your VPC
@@ -104,7 +104,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
   * geoproximity
   * weighted round robin.
 
-### Module 5
+### Module 5: STORAGE AND DATABASES
 
 * EC2 instance - local storage called _instance store volumes_; volumes are physically attached to the (EC2-)host. **ephemeral!** (temporary)
 
@@ -155,6 +155,49 @@ Volumes to not automatically scale | Automatically scales
   * Amazon **Managed Blockchain**
   * Amazon **ElastiCache** - service adding caching layers on top db; supports two types of data stores: _Redis_ and _Memcached_.
   * Amazon **DynamoDB Accelerator** - in-memory cache for DynamoDB; improving read-times.
+
+### Module 6: SECURITY
+
+* **Shared responsibility model** - _AWS_ controls security __of__ the cloud and _customers_ control security __in__ the cloud
+  * Customers: Security in the cloud
+  * AWS: Security of the cloud
+
+* AWS Identity and Access Management (**IAM**)
+  * authentication and authorization as a service
+  * identity federation
+  * **root account user** = owner of the AWS account
+* **IAM users** - by default IAM user has zero permissions;
+* **IAM policy** - a document that allows or denies permissions to AWS services and resources; JSON format; can apply to IAM users, groups, or roles.
+  * `Action`:can list any AWS API call
+  * `Resource`: list what AWS resource that specific API call is for.
+* **IAM group** - is a collection of IAM users
+* **IAM roles** - an identity that you can assume to gain temporary access to permissions.
+  * Note: _When someone assumes an IAM role, they abandon all previous permissions that they had under a previous role and assume the permissions of the new role._
+
+* **AWS Organizations** - group accounts into organizational units (OUs) to make it easier to manage accounts
+  * Centralized management
+  * Consolidated billing
+  * Hierarchical groupings of accounts
+  * AWS service and API actions access control
+  * Service control policies (**SCP**s) - can be applied to an organization _root_, an _individual member account_, or an _OU_.
+
+* **AWS Artifact** - a service that provides on-demand access to AWS security and compliance reports
+  * Access AWS compliance reports on-demand.
+  * Review, accept, and manage agreements with AWS.
+* Customer Compliance Center [link](https://aws.amazon.com/compliance/customer-center/)
+* AWS will not automatically replicate data across regtions
+
+* **DDos** attack - a deliberate attempt to make a website or application
+  * _distributed_ DDoS attack - multiple sources are used to start an attack
+* **AWS Shield** - a service that protects applications against DDoS attacks
+  * _Standard_ - automatically protects all AWS customers at no cost.
+  * _Advanced_ - paid service; detailed attack diagnostics; detect and mitigate sophisticated DDoS attacks; integrates with CloudFront, Route 53, ELB, and AWS WAF.
+
+* Additional security services:
+  * AWS **Key Management Service** (AWS **KMS**)
+  * AWS **WAF** - web application firewall.
+  * Amazon **Inspector** - automated security assessment service for exposure, vulnerabilities, and deviations from best practices. EC2 agent available.
+  * Amazon **GuardDuty** - intelligent threat detection for infrastructure and resources; analyzes continuous streams of metadata from your account, and network activity from CloudTrail events, VPC Flow Logs, and DNS logs.
 
 
 
