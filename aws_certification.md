@@ -64,15 +64,15 @@
 * **Availability zone** (**AZ**)
   * each region = many datacenters;  availability zone = one or many datacenters
   * ...as a best practice with AWS, we always recommend you run across at least two Availability Zones in a Region.....
-  * many services are on a regional level already (e.g. ELB); regionally scoped service = meaning they run synchronously across multiple AZs 
+  * many services are on a regional level already (e.g. ELB); regionally scoped service = meaning they run synchronously across multiple AZs
 
 * **Edge locations**
-  * CDN = Content Delivery Network 
+  * CDN = Content Delivery Network
   * Amazon's CDN = Amazon **Cloudfront**
   * Cloudfront uses 'Edge locations'
   * Also run 'Amazon Route 53' - highly available and scalable cloud Domain Name System (DNS) web service
 
-* **AWS Outposts** - where AWS will basically install a fully operational mini Region, right inside your own data center. 
+* **AWS Outposts** - where AWS will basically install a fully operational mini Region, right inside your own data center.
 
 * Ways to interact with AWS services:
   * AWS Mangement Console
@@ -125,21 +125,36 @@
 
 Amazon EBS | Amazon EFS
 ------------ | -------------
-Volumes EC2 instance attached	|	Multiple instances can read/write
-AZ level resource; need be same AZ as EC2 instance		|	Regional resource
-Volumes to not automatically scale |	Automatically scales
+Volumes EC2 instance attached      |   Multiple instances can read/write
+AZ level resource; need be same AZ as EC2 instance   |  Regional resource
+Volumes to not automatically scale | Automatically scales
 
 
 * Amazon Relational Database Service (Amazon **RDS**) - managed service that enables you to run relational databases in the AWS Cloud.
 * RDS services includes: automated patching, backups, redundancy, failover, disaster recovery
 * Amazon RDS is available on six database engines
-  * MySQL
-  * PostgreSQL
-  * MariaDB
-  * Oracle
-  * Microsoft SQL Server
-* Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
+  * (1) MySQL
+  * (2) PostgreSQL
+  * (3) MariaDB
+  * (4) Oracle
+  * (5) Microsoft SQL Server
+  * (6) Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
 
+* Amazon **DynamoDB** - non-relationsl, NoSQL database; key-value and document database service; serverless.
+
+* Amazon **Redshift** - data warehousing service (e.g. for big data analytics; BI solutions).
+
+* AWS Database Migration Service (AWS **DMS**)
+  * "...The source and target databases can be of the _same_ type _or different_ types...."
+  * "...supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms..."
+
+* Additional database services
+  * Amazon **DocumentDB** - document database service; MongoDB compatible.
+  * Amazon **Neptune** - graph database service. 
+  * Amazon **Quantum Ledger Database** (Amazon _QLDB_) - ledger database service; immutable system of record
+  * Amazon Managed Blockchain
+  * Amazon **ElastiCache** - service adding caching layers on top db; supports two types of data stores: _Redis_ and _Memcached_.
+  * Amazon **DynamoDB Accelerator** - in-memory cache for DynamoDB; improving read-times.
 
 
 
