@@ -176,7 +176,7 @@ Volumes to not automatically scale | Automatically scales
 
 * **AWS Organizations** - group accounts into organizational units (OUs) to make it easier to manage accounts
   * Centralized management
-  * Consolidated billing
+  * Consolidated billing - combine the usage across all accounts in the organization to share pricing discounts
   * Hierarchical groupings of accounts
   * AWS service and API actions access control
   * Service control policies (**SCP**s) - can be applied to an organization _root_, an _individual member account_, or an _OU_.
@@ -248,6 +248,51 @@ Volumes to not automatically scale | Automatically scales
   * Enterprise support - 15-minute SLA, Technical Account Manager (TAM)
 
 * **AWS Marketplace** - digital catalog that includes thousands of software listings from independent software vendors.
+
+
+### Module 9: MIGRATION AND INNOVATION
+
+* AWS Cloud Adoption Framework (AWS **CAF**) - organizes guidance into six areas of focus, called _Perspectives_:
+* _Business perspectives_:
+  * Business Perspective (1) - move from a model that separates business and IT strategies into a business model that integrates IT strategy.
+  * People Perspective (2) - operating and recovering IT workloads to meet the requirements of your business stakeholders.
+  * Governance Perspectiv (3) - skills and processes to align IT strategy with business strategy.
+* _Technical Perspectives_:
+  * Platform Perspective (4) - principles and patterns for implementing new solutions on the cloud, and migrating on-premises workloads to the cloud.
+  * Security Perspective (5) - ensures meeting security objectives for visibility, auditability, control, and agility.
+  * Operations Perspective (6) - focuses on operating and recovering IT workloads to meet the requirements of your business stakeholders.
+
+* **Migration strategies** - six of the most common migration strategies (six **R**s)
+  * (1) Rehosting - lift-and-shift
+  * (2) Replatforming - lift, tinker, and shift; Optimization is achieved without changing the core architecture of the application.
+  * (3) Refactoring/re-architecting - ..._Refactoring is driven by a strong business need to add features, scale, or performance _...
+  * (4) Repurchasing - e.g. move from a traditional license to a software-as-a-service model.
+  * (5) Retaining - keep applications that are critical for the business in the source environment.
+  * (6) Retiring - removing applications that are no longer needed.
+
+* AWS **Snow Family** - collection of physical devices that help to physically transport data in and out of AWS.
+  * Example: dedicated 1Gbps network moved 1 PB of data in ~ 100 days.
+* AWS Snow Family is composed of:
+  * AWS Snowcone - holds up to 8TB of data.
+  * AWS Snowball - either Edge Storage Optimized (80 TB) or Edge Compute Optimized (42 TB)
+  * AWS Snowmobile - 100 Petabytes
+
+* Innovation with AWS
+  * VMWare Cloud on AWS
+  * Amazon **SageMaker** - machine learning (ML)
+  * Amazon Augmented AI (**A2I**)
+  * Amazon Lex - core of Alexa
+  * Amazon **Textract** - extract text
+  * AWS **Deep Racer**
+  * Internet of Things
+  * AWS Ground Statsion - satelite time
+  * etc
+
+
+
+
+
+
 
 
 ## AWS Certified Solutions Architect
