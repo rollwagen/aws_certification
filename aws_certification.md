@@ -224,6 +224,30 @@ Volumes to not automatically scale | Automatically scales
   * orange - recommended investigations.
   * red - recommended actions.
 
+### Module 9: PRICING AND SUPPORT
+
+* AWS **Free Tier**:
+  * Always Free
+  * 12 Months Free
+  * Trials
+* Pricing:
+  * Pay for what you use.
+  * Pay less when you reserve.
+  * Pay less with volume-based discounts when you use more.
+
+* **Consolidated billing**
+
+* **AWS Budgets** - create budgets to plan your service usage, service costs, and instance reservations.
+
+* **AWS Cost Explorer**
+
+* **AWS Support plans**
+  * Basic support - any customer
+  * Developer tier - in addition: Email customer support (24h response)
+  * Business tier - _all_ Trusted Advisor functionality, direct phone support access
+  * Enterprise support - 15-minute SLA, Technical Account Manager (TAM)
+
+* **AWS Marketplace** - digital catalog that includes thousands of software listings from independent software vendors.
 
 
 ## AWS Certified Solutions Architect
