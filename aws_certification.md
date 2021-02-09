@@ -199,7 +199,30 @@ Volumes to not automatically scale | Automatically scales
   * Amazon **Inspector** - automated security assessment service for exposure, vulnerabilities, and deviations from best practices. EC2 agent available.
   * Amazon **GuardDuty** - intelligent threat detection for infrastructure and resources; analyzes continuous streams of metadata from your account, and network activity from CloudTrail events, VPC Flow Logs, and DNS logs.
 
+### Module 7: MONITORING AND ANALYTICS
 
+* **Monitoring** - Oberving systems, collecting metrics, and then using data to make decision.
+
+* Amazon **CloudWatch** - monitoring and observability service; CloudWatch alarms; integrated with SNS.
+
+* AWS **CloudTrail** records API calls for account; recorded information includes:
+  * identity of the API caller
+  * time of the API call
+  * source IP address of the API caller
+  * etc
+* Events are typically updated in CloudTrail within 15 minutes after an API call; can filter events.
+* AWS **CloudTrail _Insights_** - optional feature; automatically detect unusual API activities
+
+* AWS **Trusted Advisor** - online tool providing real time guidance following AWS best practices; Some checks are free, others available depending on the level support plan.
+  * Cost optimization
+  * Performance
+  * Security
+  * Fault tolerance
+  * Service limit
+* AWS Trusted Advisor Categories:
+  * green - no problems.
+  * orange - recommended investigations.
+  * red - recommended actions.
 
 
 
