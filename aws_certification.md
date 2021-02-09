@@ -265,7 +265,7 @@ Volumes to not automatically scale | Automatically scales
 * **Migration strategies** - six of the most common migration strategies (six **R**s)
   * (1) Rehosting - lift-and-shift
   * (2) Replatforming - lift, tinker, and shift; Optimization is achieved without changing the core architecture of the application.
-  * (3) Refactoring/re-architecting - ..._Refactoring is driven by a strong business need to add features, scale, or performance _...
+  * (3) Refactoring / re-architecting - ...Refactoring is driven by a strong business need to add features, scale, or performance...
   * (4) Repurchasing - e.g. move from a traditional license to a software-as-a-service model.
   * (5) Retaining - keep applications that are critical for the business in the source environment.
   * (6) Retiring - removing applications that are no longer needed.
@@ -287,6 +287,24 @@ Volumes to not automatically scale | Automatically scales
   * Internet of Things
   * AWS Ground Statsion - satelite time
   * etc
+
+### Module 10: THE CLOUD JOURNEY
+
+* AWS **Well-Architected Framework**. Five Pillars:
+  * Operational Excellence -  gain insight; run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
+  * Security - protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
+  * Reliability - recover from infrastructure or service disruptions; dynamically acquire resources to meet demand; mitigate disruptions.
+  * Performance Efficiency -  use computing resources efficiently to meet system requirements; informed decision.
+  * Cost Optimization - run systems to deliver business value at the lowest price point.
+* **Well-Architected Tool**
+
+* Benefits of the AWS Cloud (6)
+  * Trade upfront expense for variable expense. (1)
+  * Benefit from massive economies of scale. (2)
+  * Stop guessing capacity. (3)
+  * Increase speed and agility. (4)
+  * Stop spending money running and maintaining data centers. (5)
+  * Go global in minutes. (6)
 
 
 
