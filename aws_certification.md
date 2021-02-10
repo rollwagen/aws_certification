@@ -3,14 +3,18 @@
 > *Quick documentation links:* \
 > [AWS Whitepapers](https://aws.amazon.com/whitepapers/) \
 > [AWS Documentation](https://docs.aws.amazon.com/index.html)
+> [How AWS Pricing Works](https://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
+> [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
 
 ## AWS Cloud Practitioner Essentials
+
 
 ### Module 1: INTRODUCTION
 
 #### Definitions / Additional resources / Links
+
 * **Cloud computing**="...on-demand delivery of IT resources over the internet with pay-as-you-go pricing."
-* [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
+
 
 
 ### Module 2: COMPUTE IN THE CLOUD
@@ -52,6 +56,8 @@
 - [ ] **TODO** Difference between ECS and EKS
 - [ ] **TODO** Understand Fargate better
   
+
+
 ### Module 3: GLOBAL INFRASTRUCTURE AND RELIABILITY
 
 * **Region** -  separate geographic area; consists of _two or more_ Availability Zones (AZ)
@@ -83,6 +89,9 @@
 
 - [ ] **TODO** (Key-)differences between AWS CloudFormation and Terraform
 
+
+
+
 ### Module 4: NETWORKING
 
 * Amazon Virtual Private Cloud (**VPC**) - logically isolated (network) section; essentially your own private network in AWS
@@ -103,6 +112,8 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
   * geolocation DNS
   * geoproximity
   * weighted round robin.
+
+
 
 ### Module 5: STORAGE AND DATABASES
 
@@ -156,6 +167,8 @@ Volumes to not automatically scale | Automatically scales
   * Amazon **ElastiCache** - service adding caching layers on top db; supports two types of data stores: _Redis_ and _Memcached_.
   * Amazon **DynamoDB Accelerator** - in-memory cache for DynamoDB; improving read-times.
 
+
+
 ### Module 6: SECURITY
 
 * **Shared responsibility model** - _AWS_ controls security __of__ the cloud and _customers_ control security __in__ the cloud
@@ -199,6 +212,9 @@ Volumes to not automatically scale | Automatically scales
   * Amazon **Inspector** - automated security assessment service for exposure, vulnerabilities, and deviations from best practices. EC2 agent available.
   * Amazon **GuardDuty** - intelligent threat detection for infrastructure and resources; analyzes continuous streams of metadata from your account, and network activity from CloudTrail events, VPC Flow Logs, and DNS logs.
 
+
+
+
 ### Module 7: MONITORING AND ANALYTICS
 
 * **Monitoring** - Oberving systems, collecting metrics, and then using data to make decision.
@@ -224,6 +240,9 @@ Volumes to not automatically scale | Automatically scales
   * orange - recommended investigations.
   * red - recommended actions.
 
+
+
+
 ### Module 9: PRICING AND SUPPORT
 
 * AWS **Free Tier**:
@@ -248,6 +267,9 @@ Volumes to not automatically scale | Automatically scales
   * Enterprise support - 15-minute SLA, Technical Account Manager (TAM)
 
 * **AWS Marketplace** - digital catalog that includes thousands of software listings from independent software vendors.
+
+
+
 
 
 ### Module 9: MIGRATION AND INNOVATION
@@ -288,6 +310,9 @@ Volumes to not automatically scale | Automatically scales
   * AWS Ground Statsion - satelite time
   * etc
 
+
+
+
 ### Module 10: THE CLOUD JOURNEY
 
 * AWS **Well-Architected Framework**. Five Pillars:
@@ -308,6 +333,12 @@ Volumes to not automatically scale | Automatically scales
 
 
 
+### Module 11: AWS CERTIFIED CLOUD PRACTITIONER BASICS
+
+* **Exam strategies**
+  * Read the full question.
+  * Predict the answer before reviewing the response options.
+  * Eliminate incorrect response options.
 
 
 
