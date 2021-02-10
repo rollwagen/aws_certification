@@ -2,8 +2,8 @@
 
 > *Quick documentation links:* \
 > [AWS Whitepapers](https://aws.amazon.com/whitepapers/) \
-> [AWS Documentation](https://docs.aws.amazon.com/index.html)
-> [How AWS Pricing Works](https://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
+> [AWS Documentation](https://docs.aws.amazon.com/index.html) \
+> [How AWS Pricing Works](https://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf) \
 > [Overview of Amazon Web Services AWS Whitepaper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
 
 ## AWS Cloud Practitioner Essentials
