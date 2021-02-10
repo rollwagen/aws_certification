@@ -302,7 +302,7 @@ Volumes to not automatically scale | Automatically scales
 * Innovation with AWS
   * VMWare Cloud on AWS
   * Amazon **SageMaker** - machine learning (ML)
-  * Amazon Augmented AI (**A2I**)
+  * Amazon Augmented AI (**A2I**) - provides built-in human review workflows for common machine learning use cases, such as content moderation and text extraction from documents. 
   * Amazon Lex - core of Alexa
   * Amazon **Textract** - extract text
   * AWS **Deep Racer**
@@ -344,20 +344,35 @@ Volumes to not automatically scale | Automatically scales
 ### Final Assessment
 
 * Which Perspective of the AWS Cloud Adoption Framework focuses on recovering IT workloads to meet the requirements of your business stakeholders? _Operations Persepctive_ (answered: Governance b/c of DR)
+
 * Which statement best describes an Availability Zone? _A fully isolated portion of the AWS global infrastructure._; "A separate geographical location with multiple locations that are isolated from each other" - This response option describes a Region.
+
 * Which pillar of the AWS Well-Architected Framework focuses on using computing resources in ways that meet system requirements? _Performance Efficiency_
   * Performance Efficiency pillar focuses on using computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
   * Operational Excellence pillar includes the ability to run workloads effectively, gain insights into their operations, and continuously improve supporting processes to deliver business value. 
   * Security pillar focuses on protecting data, systems, and assets. It also focuses on using cloud technologies to improve the security of your workloads.
   * Reliability pillar focuses on the ability of a workload to consistently and correctly perform its intended functions.
+
 * Which compute option reduces costs when you commit to a consistent amount of compute usage for a 1-year or 3-year term? Not: Reserved instances; Correct: Savings Plan
   * Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term. 
   * Reserved Instances are a billing discount that is applied to the use of On-Demand Instances in your account. You can purchase Standard Reserved and Convertible Reserved Instances for a one-year or three-year term, and Scheduled Reserved Instances for a one-year term. _Unlike Savings Plans, Reserved Instances do not require you to commit to a consistent amount of compute usage over the duration of the contract._
+
+* Which AWS Trusted Advisor category includes checks for your service limits and overutilized instances?  _Performance_ 
+  * Performance - improve the performance of your services by providing recommendations for how to take advantage of provisioned throughput.
+  * Security category includes checks that help you to review your permissions and identify which AWS security features to enable.
+  * Cost Optimization category includes checks for unused or idle resources that could be eliminated and provide cost savings.
+  * Fault Tolerance category includes checks to help you improve your applications’ availability and redundancy.
+
+* Which service enables you to build the workflows that are required for human review of machine learning predictions? Correct: Amazon A2I
 
 * **Misc**
   * A network access control list (ACL) is a virtual firewall that controls inbound and outbound traffic at the subnet level.
   * A security group is a virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance. 
   * S3 One Zone-IA is ideal for infrequently accessed data that does not require high availability.
+  * A service that helps protect your applications against distributed denial-of-service (DDoS) attacks - _AWS Shield._
+  * AWS Direct Connect is a service that enables you to establish a dedicated private connection between your data center and VPC. 
+  * A virtual private gateway enables you to establish a VPN connection between your VPC and a private network, such as an on-prem DC.
+  * Which service enables you to build the workflows that are required for human review of machine learning predictions?
 
 
 ## AWS Certified Solutions Architect
