@@ -341,7 +341,23 @@ Volumes to not automatically scale | Automatically scales
   * Eliminate incorrect response options.
 
 
+### Final Assessment
 
+* Which Perspective of the AWS Cloud Adoption Framework focuses on recovering IT workloads to meet the requirements of your business stakeholders? _Operations Persepctive_ (answered: Governance b/c of DR)
+* Which statement best describes an Availability Zone? _A fully isolated portion of the AWS global infrastructure._; "A separate geographical location with multiple locations that are isolated from each other" - This response option describes a Region.
+* Which pillar of the AWS Well-Architected Framework focuses on using computing resources in ways that meet system requirements? _Performance Efficiency_
+  * Performance Efficiency pillar focuses on using computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+  * Operational Excellence pillar includes the ability to run workloads effectively, gain insights into their operations, and continuously improve supporting processes to deliver business value. 
+  * Security pillar focuses on protecting data, systems, and assets. It also focuses on using cloud technologies to improve the security of your workloads.
+  * Reliability pillar focuses on the ability of a workload to consistently and correctly perform its intended functions.
+* Which compute option reduces costs when you commit to a consistent amount of compute usage for a 1-year or 3-year term? Not: Reserved instances; Correct: Savings Plan
+  * Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term. 
+  * Reserved Instances are a billing discount that is applied to the use of On-Demand Instances in your account. You can purchase Standard Reserved and Convertible Reserved Instances for a one-year or three-year term, and Scheduled Reserved Instances for a one-year term. _Unlike Savings Plans, Reserved Instances do not require you to commit to a consistent amount of compute usage over the duration of the contract._
+
+* **Misc**
+  * A network access control list (ACL) is a virtual firewall that controls inbound and outbound traffic at the subnet level.
+  * A security group is a virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance. 
+  * S3 One Zone-IA is ideal for infrequently accessed data that does not require high availability.
 
 
 ## AWS Certified Solutions Architect
