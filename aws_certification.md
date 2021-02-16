@@ -19,6 +19,7 @@
 
 ### Module 2: COMPUTE IN THE CLOUD
 
+
 * Amazon **EC2 instance types** (5):
   * General purpose
   * Compute optimized
@@ -26,28 +27,37 @@
   * Accelerated computing
   * Storage optimized
 
+
 * Amazon **EC2 pricing**
   * On-Demand - ...for short-term, irregular workloads that cannot be interrupted...
   * Savings Plan - ...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term....
   * Reserved Instances - ...assigned to a specific Availability Zone, they provide a capacity reservation... either 1 year or 3 years...
   * Spot instances - ...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning...
-  * Dedicated Hosts \
+  * Dedicated Hosts
+
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
+
 
 * Amazon EC2 **Auto Scaling** (2)
   * _dynamic_ scaling - responds to changing demand
   * _predictive_ scaling - automatically schedules...based on predicted demand
+
 * Elastic Load Balancing (**ELB**) - _Regional_ level
+
 * **Messaging and queuing**
   * Note: **loosely coupled** - ...an architecture where if one component fails, it is isolated and therefore won't cause cascading failures throughout the whole system...
   * Simple Queue Service (**SQS**) - a message queuing service; _...fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless application..._; data in message='payload'
   * Simple Notification Service (**SNS**) - a publish/subscribe service; _...messaging service for both application-to-application (A2A) and application-to-person (A2P) communication..._
+
 * AWS **Lambda** - serverless compute service; run time <15min
+
 * Amazon Elastic Container Service (Amazon **ECS**) - _...a container management system..._
+
 * Amazon Elastic Kubernetes Service (Amazon **EKS**) - _... a fully managed service that you can use to run Kubernetes on AWS..._
+
 * Amazon **Fargate** - _...serverless compute engine for containers. It works with both Amazon ECS and Amazon EKS..._
 
-* Overview Compute Services [link](https://aws.amazon.com/products/compute/)
+* Overview **Compute Services** [link](https://aws.amazon.com/products/compute/)
   * Instances (Virtual machines)
   * Containers
   * Serverless
