@@ -31,7 +31,7 @@
   * Savings Plan - ...commitment to a consistent amount of usage (measured in $/hour) for a 1 or 3 year term....
   * Reserved Instances - ...assigned to a specific Availability Zone, they provide a capacity reservation... either 1 year or 3 years...
   * Spot instances - ...spare Amazon EC2 computing capacity; AWS can re-claim any time; 2 minute warning...
-  * Dedicated Hosts
+  * Dedicated Hosts \
 *Note:* ...primary difference between the two programs is that Reserved Instances offer a discount against On-Demand pricing depending on committed utilization, whereas Savings Plans offer a discount depending on committed spend.... [link](https://www.cloudhealthtech.com/blog/reserved-instances-vs-aws-saving-plans)
 
 * Amazon EC2 **Auto Scaling** (2)
@@ -80,7 +80,7 @@
 
 * **AWS Outposts** - where AWS will basically install a fully operational mini Region, right inside your own data center.
 
-* Ways to interact with AWS services:
+* Ways to interact with AWS services (3):
   * AWS Mangement Console
   * AWS Command line interface (CLI)
   * SDKs
@@ -103,11 +103,11 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
 * ...only technical reason to use subnets in a VPC is to control access to the gateways....public subnets have access to the internet gateway; the private subnets do not
 * Network access control lists (**ACL**s) - virtual firewall that controls inbound and outbound traffic at the _subnet level_.
   * ...Each AWS account includes a default network ACL...whcih allows all inbound and outbound traffic
+  * _Note:_ Network ACL = **stateless**
 * **Security groups** - virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance _= EC 2 instance level_
-* _Note:_ Security group = stateful;  Network ACL = stateless
+  * _Note:_ Security group = **stateful**
 
 * Amazon Route 53 (DNS) routing policies:
-  * routing policies
   * latency-based routing
   * geolocation DNS
   * geoproximity
@@ -123,7 +123,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
 * EBS snapshot -  incremental backup.
 
 * Amazon Simple Storage Service (Amazon *S3*) -  object-level storage; 11 nines of durability; max file size 5TB
-* S3 Amazon S3 storage classes; two factors: (1) how often retrieve data; (2) how available data needs to be; min 3 AZs (_regional_ service)
+* S3 storage classes; two factors: (1) how often retrieve data; (2) how available data needs to be; min 3 AZs (_regional_ service)
   * S3 Standard - data stored in at least 3 AZs
   * S3 Standard-Infrequent Access (S3 Standard-IA)
   * S3 One Zone-Infrequent Access (S3 One Zone-IA)
@@ -132,7 +132,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
   * S3 Glacier Deep Archive
 
 * Amazon Elastic File System (Amazon **EFS**) - fully managed elastic NFS file system; scalable.
-* Note: for **EFS** on-premises servers can access Amazon EFS using AWS Direct Connect.
+  * Note: for **EFS** on-premises servers can access Amazon EFS using AWS Direct Connect.
 
 Amazon EBS | Amazon EFS
 ------------ | -------------
@@ -151,7 +151,7 @@ Volumes to not automatically scale | Automatically scales
   * Microsoft SQL Server
   * Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
 
-* Amazon **DynamoDB** - non-relationsl, NoSQL database; key-value and document database service; serverless.
+* Amazon **DynamoDB** - non-relational, NoSQL database; key-value and document database service; serverless.
 
 * Amazon **Redshift** - data warehousing service (e.g. for big data analytics; BI solutions).
 
@@ -178,10 +178,10 @@ Volumes to not automatically scale | Automatically scales
 * AWS Identity and Access Management (**IAM**)
   * authentication and authorization as a service
   * identity federation
-  * **root account user** = owner of the AWS account
-* **IAM users** - by default IAM user has zero permissions;
+  * **root account user** = owner of the AWS account.
+* **IAM users** - by default IAM user has zero permissions.
 * **IAM policy** - a document that allows or denies permissions to AWS services and resources; JSON format; can apply to IAM users, groups, or roles.
-  * `Action`:can list any AWS API call
+  * `Action`: can list any AWS API call
   * `Resource`: list what AWS resource that specific API call is for.
 * **IAM group** - is a collection of IAM users
 * **IAM roles** - an identity that you can assume to gain temporary access to permissions.
@@ -200,7 +200,7 @@ Volumes to not automatically scale | Automatically scales
 * Customer Compliance Center [link](https://aws.amazon.com/compliance/customer-center/)
 * AWS will not automatically replicate data across regtions
 
-* **DDos** attack - a deliberate attempt to make a website or application
+* **DDos** attack - a deliberate attempt to make a website or application unavailable to users
   * _distributed_ DDoS attack - multiple sources are used to start an attack
 * **AWS Shield** - a service that protects applications against DDoS attacks
   * _Standard_ - automatically protects all AWS customers at no cost.
@@ -219,8 +219,9 @@ Volumes to not automatically scale | Automatically scales
 
 * **Monitoring** - Oberving systems, collecting metrics, and then using data to make decision.
 
-* Amazon **CloudWatch** - monitoring and observability service; CloudWatch alarms; integrated with SNS.
+* Amazon **CloudWatch** - monitoring and observability service (for applications); CloudWatch alarms; integrated with SNS.
 
+#### AWS CloudTrail
 * AWS **CloudTrail** records API calls for account; recorded information includes:
   * identity of the API caller
   * time of the API call
@@ -229,13 +230,17 @@ Volumes to not automatically scale | Automatically scales
 * Events are typically updated in CloudTrail within 15 minutes after an API call; can filter events.
 * AWS **CloudTrail _Insights_** - optional feature; automatically detect unusual API activities
 
-* AWS **Trusted Advisor** - online tool providing real time guidance following AWS best practices; Some checks are free, others available depending on the level support plan.
-  * Cost optimization
-  * Performance
-  * Security
-  * Fault tolerance
-  * Service limit
-* AWS Trusted Advisor Categories:
+#### AWS Trusted Advisor
+* AWS **Trusted Advisor** - online tool providing real time guidance following AWS best practices
+* Some checks are free, others available depending on the level support plan. AWS Business Support and AWS Enterprise Support customers get access to all Trusted Advisor checks.
+* Checks fall under five categories:
+  * Cost optimization - e.g. eliminating unused and idle resources or by making commitments to reserved capacity.
+  * Performance - e.g. checking service limits, ensuring taking advantage of provisioned throughput, and monitoring for overutilized instances.
+  * Security - e.g. closing gaps, enabling various AWS security features, and examining your permissions.
+  * Fault tolerance - e.g. increase availability + redundancy of AWS application by taking advantage of auto scaling, health checks, multi AZ, and backup capabilities.
+  * Service limit - checks for service usage that is more than 80% of the service limit.
+* AWS Basic Support and AWS Developer Support customers
+* AWS Trusted Advisor states:
   * green - no problems.
   * orange - recommended investigations.
   * red - recommended actions.
@@ -276,8 +281,8 @@ Volumes to not automatically scale | Automatically scales
 
 * AWS Cloud Adoption Framework (AWS **CAF**) - organizes guidance into six areas of focus, called _Perspectives_:
 * _Business perspectives_:
-  * Business Perspective (1) - move from a model that separates business and IT strategies into a business model that integrates IT strategy.
-  * People Perspective (2) - operating and recovering IT workloads to meet the requirements of your business stakeholders.
+  * Business Perspective (1) - ensures that IT aligns with business needs and that IT investments link to key business results.
+  * People Perspective (2) - development of an organization-wide change management strategy for successful cloud adoption.
   * Governance Perspectiv (3) - skills and processes to align IT strategy with business strategy.
 * _Technical Perspectives_:
   * Platform Perspective (4) - principles and patterns for implementing new solutions on the cloud, and migrating on-premises workloads to the cloud.
@@ -302,7 +307,7 @@ Volumes to not automatically scale | Automatically scales
 * Innovation with AWS
   * VMWare Cloud on AWS
   * Amazon **SageMaker** - machine learning (ML)
-  * Amazon Augmented AI (**A2I**) - provides built-in human review workflows for common machine learning use cases, such as content moderation and text extraction from documents. 
+  * Amazon Augmented AI (**A2I**) - provides built-in human review workflows for common machine learning use cases, such as content moderation and text extraction from documents.
   * Amazon Lex - core of Alexa
   * Amazon **Textract** - extract text
   * AWS **Deep Racer**
@@ -316,11 +321,11 @@ Volumes to not automatically scale | Automatically scales
 ### Module 10: THE CLOUD JOURNEY
 
 * AWS **Well-Architected Framework**. Five Pillars:
-  * Operational Excellence -  gain insight; run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
-  * Security - protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
-  * Reliability - recover from infrastructure or service disruptions; dynamically acquire resources to meet demand; mitigate disruptions.
-  * Performance Efficiency -  use computing resources efficiently to meet system requirements; informed decision.
-  * Cost Optimization - run systems to deliver business value at the lowest price point.
+  * **Operational Excellence** -  gain insight; run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
+  * **Security** - protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
+  * **Reliability** - recover from infrastructure or service disruptions; dynamically acquire resources to meet demand; mitigate disruptions.
+  * **Performance Efficiency** -  use computing resources efficiently to meet system requirements; informed decision.
+  * **Cost Optimization** - run systems to deliver business value at the lowest price point.
 * **Well-Architected Tool**
 
 * Benefits of the AWS Cloud (6)
@@ -349,15 +354,15 @@ Volumes to not automatically scale | Automatically scales
 
 * Which pillar of the AWS Well-Architected Framework focuses on using computing resources in ways that meet system requirements? _Performance Efficiency_
   * Performance Efficiency pillar focuses on using computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
-  * Operational Excellence pillar includes the ability to run workloads effectively, gain insights into their operations, and continuously improve supporting processes to deliver business value. 
+  * Operational Excellence pillar includes the ability to run workloads effectively, gain insights into their operations, and continuously improve supporting processes to deliver business value.
   * Security pillar focuses on protecting data, systems, and assets. It also focuses on using cloud technologies to improve the security of your workloads.
   * Reliability pillar focuses on the ability of a workload to consistently and correctly perform its intended functions.
 
 * Which compute option reduces costs when you commit to a consistent amount of compute usage for a 1-year or 3-year term? Not: Reserved instances; Correct: Savings Plan
-  * Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term. 
+  * Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.
   * Reserved Instances are a billing discount that is applied to the use of On-Demand Instances in your account. You can purchase Standard Reserved and Convertible Reserved Instances for a one-year or three-year term, and Scheduled Reserved Instances for a one-year term. _Unlike Savings Plans, Reserved Instances do not require you to commit to a consistent amount of compute usage over the duration of the contract._
 
-* Which AWS Trusted Advisor category includes checks for your service limits and overutilized instances?  _Performance_ 
+* Which AWS Trusted Advisor category includes checks for your service limits and overutilized instances?  _Performance_
   * Performance - improve the performance of your services by providing recommendations for how to take advantage of provisioned throughput.
   * Security category includes checks that help you to review your permissions and identify which AWS security features to enable.
   * Cost Optimization category includes checks for unused or idle resources that could be eliminated and provide cost savings.
@@ -367,7 +372,7 @@ Volumes to not automatically scale | Automatically scales
 
 * **Misc**
   * A network access control list (ACL) is a virtual firewall that controls inbound and outbound traffic at the subnet level.
-  * A security group is a virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance. 
+  * A security group is a virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance.
   * S3 One Zone-IA is ideal for infrequently accessed data that does not require high availability.
   * A service that helps protect your applications against distributed denial-of-service (DDoS) attacks - _AWS Shield._
   * AWS Direct Connect is a service that enables you to establish a dedicated private connection between your data center and VPC. 
