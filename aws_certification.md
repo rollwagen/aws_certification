@@ -132,7 +132,11 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
 * Amazon Elastic Block Store (Amazon **EBS**); virtual harddrives = EBS volumes
 * EBS snapshot -  incremental backup.
 
-* Amazon Simple Storage Service (Amazon *S3*) -  object-level storage; 11 nines of durability; max file size 5TB
+* Amazon Simple Storage Service (Amazon *S3*)
+  * bject-level storage
+  * 11 nines of durability
+  * max. file size 5TB
+  * supports cross-region replication
 * S3 storage classes; two factors: (1) how often retrieve data; (2) how available data needs to be; min 3 AZs (_regional_ service)
   * S3 Standard - data stored in at least 3 AZs
   * S3 Standard-Infrequent Access (S3 Standard-IA)
@@ -142,6 +146,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
   * S3 Glacier Deep Archive
 
 * Amazon Elastic File System (Amazon **EFS**) - fully managed elastic NFS file system; scalable.
+  * regional service storing data within and across multiple Availability Zones (AZs)
   * Note: for **EFS** on-premises servers can access Amazon EFS using AWS Direct Connect.
 
 Amazon EBS | Amazon EFS
@@ -152,14 +157,15 @@ Volumes to not automatically scale | Automatically scales
 
 
 * Amazon Relational Database Service (Amazon **RDS**) - managed service that enables you to run relational databases in the AWS Cloud.
-* **RDS** services includes: automated patching, backups, redundancy, failover, disaster recovery
-* Amazon **RDS** is available on _six database engines_
-  * MySQL
-  * PostgreSQL
-  * MariaDB
-  * Oracle
-  * Microsoft SQL Server
-  * Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
+  * **RDS** services includes: automated patching, backups, redundancy, failover, disaster recovery
+  * supports cross-Region read replicas
+  * Amazon **RDS** is available on _six database engines_
+    * MySQL
+    * PostgreSQL
+    * MariaDB
+    * Oracle
+    * Microsoft SQL Server
+    * Amazon **Aurora** - MySQL and PostgreSQL-compatible relational database built for the cloud (replicates six copies to three AZs; continuously backs up data to S3)
 
 * Amazon **DynamoDB** - non-relational, NoSQL database; key-value and document database service; serverless.
 
@@ -242,7 +248,7 @@ Volumes to not automatically scale | Automatically scales
 
 #### AWS Trusted Advisor
 * AWS **Trusted Advisor** - online tool providing real time guidance following AWS best practices
-* Some checks are free, others available depending on the level support plan. AWS Business Support and AWS Enterprise Support customers get access to all Trusted Advisor checks.
+* Some checks are free (7 core Trusted Advisor checks), others available depending on the level support plan. AWS Business Support and AWS Enterprise Support customers get access to all Trusted Advisor checks.
 * Checks fall under five categories:
   * Cost optimization - e.g. eliminating unused and idle resources or by making commitments to reserved capacity.
   * Performance - e.g. checking service limits, ensuring taking advantage of provisioned throughput, and monitoring for overutilized instances.
@@ -279,7 +285,10 @@ Volumes to not automatically scale | Automatically scales
   * Basic support - any customer
   * Developer tier - in addition: Email customer support (24h response)
   * Business tier - _all_ Trusted Advisor functionality, direct phone support access
-  * Enterprise support - 15-minute SLA, Technical Account Manager (TAM)
+  * Enterprise support -
+    * 15-minute SLA
+    * Technical Account Manager (TAM)
+    * AWS Infrastructure Event Management (IEM) e.g. support during the preparation and execution of planned events
 
 * **AWS Marketplace** - digital catalog that includes thousands of software listings from independent software vendors.
 
