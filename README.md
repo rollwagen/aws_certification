@@ -1,2 +1,1 @@
-# aws_certified_sysops
-AWS Certified SysOps Administrator – Associate (SOA-C02) 
+# AWS Certified SysOps Administrator – Associate (SOA-C02) 
