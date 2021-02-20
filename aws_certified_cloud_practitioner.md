@@ -11,7 +11,7 @@
 
 ### Module 1: INTRODUCTION
 
-#### Definitions / Additional resources / Links
+#### Definitions 
 
 * **Cloud computing**="...on-demand delivery of IT resources over the internet with pay-as-you-go pricing."
 
@@ -63,9 +63,6 @@
   * Serverless
   * Edge and Hybrid
 
-- [ ] **TODO** Difference between ECS and EKS
-- [ ] **TODO** Understand Fargate better
-  
 
 
 ### Module 3: GLOBAL INFRASTRUCTURE AND RELIABILITY
@@ -78,7 +75,7 @@
   * **Pricing** - each region has different price sheet
 
 * **Availability zone** (**AZ**)
-  * each region = many datacenters;  availability zone = one or many datacenters
+  * availability zone = one or many datacenters
   * ...as a best practice with AWS, we always recommend you run across at least two Availability Zones in a Region.....
   * many services are on a regional level already (e.g. ELB); regionally scoped service = meaning they run synchronously across multiple AZs
 
@@ -97,8 +94,6 @@
 * AWS **Elastic Beanstalk** - ...service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python... [link](https://aws.amazon.com/elasticbeanstalk/)
 * AWS **CloudFormation** - ...infrastructure as code tool...
 
-- [ ] **TODO** (Key-)differences between AWS CloudFormation and Terraform
-
 
 
 
@@ -112,7 +107,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
 
 * ...only technical reason to use subnets in a VPC is to control access to the gateways....public subnets have access to the internet gateway; the private subnets do not
 * Network access control lists (**ACL**s) - virtual firewall that controls inbound and outbound traffic at the _subnet level_.
-  * ...Each AWS account includes a default network ACL...whcih allows all inbound and outbound traffic
+  * ...Each AWS account includes a default network ACL...which allows all inbound and outbound traffic
   * _Note:_ Network ACL = **stateless**
 * **Security groups** - virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance _= EC 2 instance level_
   * _Note:_ Security group = **stateful**
@@ -134,7 +129,7 @@ _Note:_ ...a VPC can have multiple types of gateways attached ...
 
 * Amazon Simple Storage Service (Amazon *S3*)
   * bject-level storage
-  * 11 nines of durability
+  * 11 9s of durability
   * max. file size 5TB
   * supports cross-region replication
 * S3 storage classes; two factors: (1) how often retrieve data; (2) how available data needs to be; min 3 AZs (_regional_ service)
@@ -277,7 +272,7 @@ Volumes to not automatically scale | Automatically scales
 
 * **Consolidated billing**
 
-* **AWS Budgets** - create budgets to plan your service usage, service costs, and instance reservations.
+* **AWS Budgets** - create budgets (monthly/quarterly/yearly) to plan your service usage, service costs, and instance reservations.
 
 * **AWS Cost Explorer**
 
@@ -396,7 +391,6 @@ Volumes to not automatically scale | Automatically scales
   * A service that helps protect your applications against distributed denial-of-service (DDoS) attacks - _AWS Shield._
   * AWS Direct Connect is a service that enables you to establish a dedicated private connection between your data center and VPC. 
   * A virtual private gateway enables you to establish a VPN connection between your VPC and a private network, such as an on-prem DC.
-  * Which service enables you to build the workflows that are required for human review of machine learning predictions?
 
 
 ## AWS Certified Solutions Architect
@@ -410,7 +404,7 @@ Volumes to not automatically scale | Automatically scales
     * _Successor:_ [AWS Well Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf)
   * [AWS Security Best Practices]()
   * [Overview of Amazon Web Services]()
-  * [AWS STorage Services Overview]()
+  * [AWS Storage Services Overview]()
   * [AWS Well Architected Framework]()
   * [Overview of Security Processes]()
 
