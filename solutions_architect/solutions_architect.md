@@ -23,3 +23,17 @@
     * [AWS Certified Solutions Architect Associate All-in-One Exam Guide, Second Edition (Exam SAA-C02), 2nd Edition](https://learning.oreilly.com/library/view/aws-certified-solutions/9781260470192/)
 
 
+## Exam details
+* 65 questions
+* 130 minutes
+* about 2min per question, however all scenario based
+* questions:
+    * multiple choice, most questions 1 correct answer of 4 choices
+    * 2 correct answer out of 5 choices
+* 1000 points overall; 720 points to pass (how many points per question not transparent)
+* strategy: 3 passes
+     * easy questions on first pass, while flag everything else
+     * second pass tackle the more complex questions
+     * unknows...'have no idea' type
+
+
