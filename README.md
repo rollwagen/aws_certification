@@ -1,2 +1,1 @@
-# aws_certification
-#aws #certification
+# AWS Certifications
