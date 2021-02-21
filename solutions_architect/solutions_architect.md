@@ -1,5 +1,12 @@
 # AWS Certified Solutions Architect – Associate (SAA-C02)
 
+## Documentation resources
+https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/
+AWS
+ Whitepapers
+ FAQs
+ AWS Docuemntation
+
 ## Prepartion Links / Blogs / Courses / etc
 
 * [Amazon Learning](https://www.aws.training/)
