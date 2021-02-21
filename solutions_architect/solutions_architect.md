@@ -1,7 +1,5 @@
 # AWS Certified Solutions Architect – Associate (SAA-C02)
 
-# AWS Certified SysOps Administrator – Associate (SOA-C02)
-
 ## Prepartion Links / Blogs / Courses / etc
 
 * [Amazon Learning](https://www.aws.training/)
