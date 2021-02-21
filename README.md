@@ -4,8 +4,8 @@
 
 ## Prepartion Links / Blogs / Courses / etc
 
-* Amazon Learning
-  * 
+* [Amazon Learning](https://www.aws.training/)
+  * Course (Video): Exam Readiness: AWS Certified Solutions Architect – Associate (Digital)
 
 * Pluralsight courses
   * [Path: AWS Certified Solutions Architect – Associate (SAA-C02)](https://www.pluralsight.com/paths/aws-certified-solutions-architect-associate)
