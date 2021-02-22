@@ -5,12 +5,31 @@ https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/
 AWS
  Whitepapers
  FAQs
- AWS Docuemntation
+AWS Docuemntation
+
+## Study approach
+
+* Read the following **Whitepapers** (as per Tutorialsdojo guidance, link below):
+  * [Overview of Amazon Web Services](https://d1.awsstatic.com/whitepapers/aws-overview.pdf)
+    * _Skimmed already as part of Cloud Practitioner Exam prep; see LiquidText on iPad_
+  * [Well Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf)
+    * _Read (with notes), see LiquidText on iPad_
+  * [AWS Best Practices](https://d1.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf)
+    * Archived/Superseded by Well Architected Framework, however, still seems relevant and good content
+  * [Disaster Recovery of Workloads onAWS: Recovery in the Cloud](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.pdf#disaster-recovery-workloads-on-aws)
+* Additional Whitepapers to read for SAA-C02
+  * AWS Security Practices (Archived! Aug 2016)
+  * AWS STorage Services Overview
+  * Building Fault-Tolerant Applications on AWS 
 
 ## Prepartion Links / Blogs / Courses / etc
 
-* [Amazon Learning](https://www.aws.training/)
-  * Course (Video): Exam Readiness: AWS Certified Solutions Architect – Associate (Digital)
+* Detailed topic lists:
+  * [Cantril:Passing the SAA-C02](https://cantrill.io/2020/05/24/Passing-the-AWS-certified-solutions-architect-associate-saa-c02-certification.html)
+  * [How to study for and pass SAA-C02 (LinkedIn)](https://www.linkedin.com/pulse/how-study-pass-aws-certified-solutions-architect-saa-c02-cantrill)
+  * [AWS SAA-C02 Study Guide/Path (TutorialsDojo)](https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/) - looks very good and well structured
+
+* [Amazon Learning - Exam Readiness Video Course](https://www.aws.training/)
 
 * Pluralsight courses
   * [Path: AWS Certified Solutions Architect – Associate (SAA-C02)](https://www.pluralsight.com/paths/aws-certified-solutions-architect-associate)
@@ -19,7 +38,7 @@ AWS
 
 * Adrian Cantril
   * [Passing the AWS Certified Solutions Architect Associate (SAA-C02) Exam](https://cantrill.io/2020/05/24/Passing-the-AWS-certified-solutions-architect-associate-saa-c02-certification.html)
-  * [Course: SAA-C02](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02)
+  * [Video Course: SAA-C02](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02)
   * [GitHub aws-sa-associate-saac02](https://github.com/acantril/aws-sa-associate-saac02/)
 
 * O'Reilly
