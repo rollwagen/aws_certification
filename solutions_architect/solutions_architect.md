@@ -25,8 +25,9 @@ AWS Docuemntation
 ## Prepartion Links / Blogs / Courses / etc
 
 * Detailed topic lists:
-  * [Cantril:Passing the SAA-C02](https://cantrill.io/2020/05/24/Passing-the-AWS-certified-solutions-architect-associate-saa-c02-certification.html)
-  * [How to study for and pass SAA-C02 (LinkedIn)](https://www.linkedin.com/pulse/how-study-pass-aws-certified-solutions-architect-saa-c02-cantrill)
+  * Adrian Cantril:
+    * [Cantril:Passing the SAA-C02](https://cantrill.io/2020/05/24/Passing-the-AWS-certified-solutions-architect-associate-saa-c02-certification.html)
+      * [How to study for and pass SAA-C02 (LinkedIn)](https://www.linkedin.com/pulse/how-study-pass-aws-certified-solutions-architect-saa-c02-cantrill)
   * [AWS SAA-C02 Study Guide/Path (TutorialsDojo)](https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/) - looks very good and well structured
 
 * [Amazon Learning - Exam Readiness Video Course](https://www.aws.training/)
@@ -49,7 +50,7 @@ AWS Docuemntation
     * [AWS Certified Solutions Architect Associate All-in-One Exam Guide, Second Edition (Exam SAA-C02), 2nd Edition](https://learning.oreilly.com/library/view/aws-certified-solutions/9781260470192/)
 
 
-## Exam details
+## Exam details (from Pearson/O'Reilly video)
 * 65 questions
 * 130 minutes
 * about 2min per question, however all scenario based
