@@ -1,0 +1,11 @@
+
+
+"VPC with public and private subnets (NAT)"
+-------------------------------------------
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html
+
+We recommend this scenario if you want to run a public-facing web application, while maintaining back-end servers that aren't publicly accessible. A common example is a multi-tier website, with the web servers in a public subnet and the database servers in a private subnet. 
+
+
+
+
