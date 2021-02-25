@@ -22,6 +22,9 @@ AWS Docuemntation
   * AWS STorage Services Overview
   * Building Fault-Tolerant Applications on AWS 
 
+* Read the **FAQs**
+  * [AWS Study Guide (github/keenanromain)](https://github.com/keenanromain/AWS-SAA-C02-Study-Guide) - good list (with links) of FAQ.
+
 ## Prepartion Links / Blogs / Courses / etc
 
 * Detailed topic lists:
