@@ -7,5 +7,11 @@ https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html
 We recommend this scenario if you want to run a public-facing web application, while maintaining back-end servers that aren't publicly accessible. A common example is a multi-tier website, with the web servers in a public subnet and the database servers in a private subnet. 
 
 
+"Hosting a static website using Amazon S3"
+--------------------------------------------------------------------------
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html
+
+You can use Amazon S3 to host a static website. On a static website, individual webpages include static content. They might also contain client-side scripts.
+By contrast, a dynamic website relies on server-side processing, including server-side scripts such as PHP, JSP, or ASP.NET. Amazon S3 does not support server-side scripting, but AWS has other resources for hosting dynamic websites. To learn more about website hosting on AWS, see Web Hosting.
 
 
