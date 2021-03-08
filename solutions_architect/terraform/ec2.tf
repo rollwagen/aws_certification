@@ -61,10 +61,15 @@ resource "aws_security_group_rule" "security_rule_http" {
 }
 
 resource "aws_instance" "my-ec2-instance" {
+  ami            = "ami-0ae9bf04fb7c502ea"
+  instance_type  = "g4dn.xlarge"
+
   #ami           = "ami-0b8cd61e48f1cfc2b"
   #instance_type = "t4g.micro"
-  ami           = "ami-0932440befd74cdba"
-  instance_type = "t2.micro"
+
+  #ami           = "ami-0932440befd74cdba"
+  #instance_type = "t2.micro"
+
   associate_public_ip_address = "true"
   key_name = "id_rsa.pub"
   subnet_id = aws_subnet.my-subnet.id
@@ -74,8 +79,8 @@ resource "aws_instance" "my-ec2-instance" {
     
     apt update
     DEBIAN_FRONTEND=noninteractive apt upgrade -y
-    DEBIAN_FRONTEND=noninteractive apt install -y apache2
-    echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+    #DEBIAN_FRONTEND=noninteractive apt install -y apache2
+    #echo "Hello World from $(hostname -f)" > /var/www/html/index.html
 
     EOF
 }
