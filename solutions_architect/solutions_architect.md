@@ -1,15 +1,9 @@
 # AWS Certified Solutions Architect – Associate (SAA-C02)
 
-## Documentation resources
-https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/
-AWS
- Whitepapers
- FAQs
-AWS Docuemntation
+## Documentation resources / Study approach
 
-## Study approach
-
-* Read the following **Whitepapers** (as per Tutorialsdojo guidance, link below):
+* Read the following **Whitepapers** (as per 
+lsdojo guidance, link below):
   * [Overview of Amazon Web Services](https://d1.awsstatic.com/whitepapers/aws-overview.pdf)
     * _Skimmed already as part of Cloud Practitioner Exam prep; see LiquidText on iPad_
   * [Well Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf)
@@ -19,7 +13,7 @@ AWS Docuemntation
   * [Disaster Recovery of Workloads onAWS: Recovery in the Cloud](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.pdf#disaster-recovery-workloads-on-aws)
 * Additional Whitepapers to read for SAA-C02
   * AWS Security Practices (Archived! Aug 2016)
-  * AWS STorage Services Overview
+  * AWS Storage Services Overview
   * Building Fault-Tolerant Applications on AWS 
 
 * Read the **FAQs**
@@ -28,10 +22,11 @@ AWS Docuemntation
 ## Prepartion Links / Blogs / Courses / etc
 
 * Detailed topic lists:
+  * [AWS SAA-C02 Study Guide/Path (TutorialsDojo)](https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/) - looks very good and well structured
   * Adrian Cantril:
     * [Cantril:Passing the SAA-C02](https://cantrill.io/2020/05/24/Passing-the-AWS-certified-solutions-architect-associate-saa-c02-certification.html)
-      * [How to study for and pass SAA-C02 (LinkedIn)](https://www.linkedin.com/pulse/how-study-pass-aws-certified-solutions-architect-saa-c02-cantrill)
-  * [AWS SAA-C02 Study Guide/Path (TutorialsDojo)](https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c02/) - looks very good and well structured
+      * [How to study for and pass SAA-C02 (same content as above but on LinkedIn)](https://www.linkedin.com/pulse/how-study-pass-aws-certified-solutions-architect-saa-c02-cantrill)
+  
 
 * [Amazon Learning - Exam Readiness Video Course](https://www.aws.training/)
 
