@@ -9,6 +9,7 @@ From AWS learning (Exam Readiness Video):
 3. Determinme how to design **decoupling** mechanisms using AWS services
 4. Choose **reliable/resilient storage**
 
+
 ### Resilient VPC Architectures (section form Pearson/O'Reilly video)
 
 #### AWS Networking & VPCs
@@ -69,26 +70,47 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * can use a transit gateway or virtual private gateway as the gateway for the Amazon side of the Site-to-Site VPN connection
 
 
-_Following notes are from All-in-One book_
-
-* CIDR range, anything between /16 (65,536 IPs), and /28 (16 IPs).
-* once you create a VPC, you can’t alter the size of it.
-* VPC is limited to a region,
-* subnet is tied to only one availability zone.
-* From any subnet AWS reserves, the first four IP addresses and the last IP address are for internal networking purposes,
-* can associate multiple subnets with the same route table.
-* create a subnet, it is automatically associated with the main route table of the VPC
-* IG is a horizontally scaled, redundant, and highly available component
-* Each subnet must have a route table
-* NAT instance is a single point of failure.
-* You should be familiar with when to use a NAT gateway over a NAT instance.
-* NAT gateway and an egress-only gateway is the same (same purpose);  NAT gateway = only IPv4 traffic, egress-only gateway only IPv6
-* NAT instances, NAT gateways, and egress-only Internet gateways are stateful.
-==========
+* _Following notes are from All-in-One book_ **Chapter 3 Virtual Private Cloud** 
+  * CIDR range, anything between /16 (65,536 IPs), and /28 (16 IPs).
+  * once you create a VPC, you can’t alter the size of it.
+  * VPC is limited to a region,
+  * subnet is tied to only one availability zone.
+  * From any subnet AWS reserves, the first four IP addresses and the last IP address are for internal networking purposes,
+  * can associate multiple subnets with the same route table.
+  * create a subnet, it is automatically associated with the main route table of the VPC
+  * IG is a horizontally scaled, redundant, and highly available component
+  * Each subnet must have a route table
+  * NAT instance is a single point of failure.
+  * You should be familiar with when to use a NAT gateway over a NAT instance.
+  * NAT gateway and an egress-only gateway is the same (same purpose);  NAT gateway = only IPv4 traffic, egress-only gateway only IPv6
+  * NAT instances, NAT gateways, and egress-only Internet gateways are stateful.
 
 -------------
-1.2 Design highly available and/or fault-tolerant architectures
-1.3 Design decoupling mechanisms using AWS services
-1.4 Choose appropriate resilient storag
+
+#### EC2
 
 * EC2 Instance store -  disk type and capacity depends on instanct type
+
+##### AMIs
+* Cross Acount AMI Copy [Maarek Slide #62](docs/AWS_Certified_Solutions_Architect_Slides_v3.6.pdf#page=62) / AWS documentation [Copying AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html)
+##### EC2 Placement Groups
+* Three strategies
+  * Cluster - low latency group in single AZ; smae rack same AZ. (+) low latency (+) 10GBps (-) rack fails, all gone
+  * Spread - across underlying HW (max 7 instances per group per AZ), each instance on different HW. (+) can span across AZs
+  * Partition - _partition_=set of racks; max 7 partitions per AZ; 100s of instances. EC instances can get access to pertition info via metadata
+
+-------------
+
+
+
+
+
+
+
+
+
+
+
+## 1.2 Design highly available and/or fault-tolerant architectures
+## 1.3 Design decoupling mechanisms using AWS services
+## 1.4 Choose appropriate resilient storag
