@@ -85,12 +85,9 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * NAT gateway and an egress-only gateway is the same (same purpose);  NAT gateway = only IPv4 traffic, egress-only gateway only IPv6
   * NAT instances, NAT gateways, and egress-only Internet gateways are stateful.
 
--------------
 
 #### EC2
-
 * EC2 Instance store -  disk type and capacity depends on instanct type
-
 ##### AMIs
 * Cross Acount AMI Copy [Maarek Slide #62](docs/AWS_Certified_Solutions_Architect_Slides_v3.6.pdf#page=62) / AWS documentation [Copying AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html)
 ##### EC2 Placement Groups
@@ -99,12 +96,53 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * Spread - across underlying HW (max 7 instances per group per AZ), each instance on different HW. (+) can span across AZs
   * Partition - _partition_=set of racks; max 7 partitions per AZ; 100s of instances. EC instances can get access to pertition info via metadata
 
--------------
+#### Storage
+* **S3** - Simple Storage Service
+  * bucket names: 3-63 characters long
+  * objects have _key_; the _key_ is the full path
+  * max 5TB object size; upload max 5GB, must use 'multi part upload'
+  * flat namespace
+  * S3 **Storage classes**
+    * Standard
+    * Standard-Infrequent Access (Standard-IA)
+    * Amazon Glacier
+  * can track access requests via _access logging_
+  * S3 notification feature (events) for object _upload_ or _delete_; integration with SNS, SQS, and AWS Lambda
+  * S3 **encryption**; 4 methods:
+    * SSE-S3 - server side encryption; key management by AWS with AES-256
+    * SSE-KMS - server side encryption; key managment with AWS KMS
+    * SSE-C - server side encryption; key managment by your own
+    * Client Side Enryption
+* Amazon **Glacier**
+  * archives up to 40TB (single archive limit)
+  * integrated with AWS CloudTrail
+  * can use as a storage class in S3 via S3 API, or 'native' via Amazon Glacier API
+  
+* **EBS**
+  * EBS Volume Types
+    * only GP2 and IO1 can be used as boot volumes
+    * **gp2/gp3**
+      * max IOPS 16,000 (3 IOPS/GB =  5,334GB max IOPS reached)
+    * **io2/io1**
+      * max IOPS 64,000 (Nitro only, rest 32,000)
+    * **sti**
+      * max IOPS 500
+    * **sci**
+      * max IOPS 250
+  * EBS RAID
+    * RAID0 (_exam relevant_) - stripe -> performace
+    * RAID1 (_exam relevant_) - mirror -> fault tolerance
+    * RAID5 + 6 - both not recommended for EBS/EC2
 
+* **EFS**
+  * multi-AZ
+  * expensive compared to EBS (~ 3 x gp2), however, only pay per use (not pay per allocation as with EBS)
+  * works with security groups
+  * Windows AMI can't mount EFS; only works with Linux
+  * 2 Performance mode: _General Purpose_ and _Max I/O_
+  * Storage Tiers: _Standard_ and _Infrequent access (EFS-IA)_ (lower storage price, but cost to retrieve files)
 
-
-
-
+_2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html)
 
 
 
