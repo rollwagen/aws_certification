@@ -102,11 +102,15 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * objects have _key_; the _key_ is the full path
   * max 5TB object size; upload max 5GB, must use 'multi part upload'
   * flat namespace
-  * S3 **Storage classes**
-    * Standard
-    * Standard-Infrequent Access (Standard-IA)
-    * Amazon Glacier
   * can track access requests via _access logging_
+  * 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket. 
+  * S3 **Storage classes**
+    * Standard - general purpose; 11 9s of durability; 99.99 availability
+    * Standard-Infrequent Access (Standard-IA) - less frequently accesses, but rapid access when needed; 99.9 availability
+    * One Zone-Infrequent Access
+    * S3 Intelligent Tiering
+    * Amazon Glacier - 'Archives' up to 40TB; Archives stored in Vaults
+    * Amazon Glacier Deep Archives
   * S3 notification feature (events) for object _upload_ or _delete_; integration with SNS, SQS, and AWS Lambda
   * S3 **encryption**; 4 methods:
     * SSE-S3 - server side encryption; key management by AWS with AES-256
@@ -121,8 +125,22 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * CORS - Cross Origin Resource Sharing
 * Amazon **Glacier**
   * archives up to 40TB (single archive limit)
+  * minimum storage duration 90 days
   * integrated with AWS CloudTrail
   * can use as a storage class in S3 via S3 API, or 'native' via Amazon Glacier API
+  * three (3) retrieval options
+    * Expedited (1 to 5min)
+    * Standards (3 to 4h)
+    * Bulk (5 to 12h)
+* Amazon **Glacier Deep Archive**
+  * minimum storage duration 180 days
+  * two (2) retrieval options
+    * Standard (12h)
+    * Bulk (48h)
+* S3 Lifecycle Rules
+  * Transition actions: define when object are transitioned to another storage calss
+  * Expiration actions: delete after specified time
+  * Rules can apply to certain _prefix_ or object _tags_
 
   
 * **EBS**
