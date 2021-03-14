@@ -111,12 +111,19 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * S3 **encryption**; 4 methods:
     * SSE-S3 - server side encryption; key management by AWS with AES-256
     * SSE-KMS - server side encryption; key managment with AWS KMS
-    * SSE-C - server side encryption; key managment by your own
-    * Client Side Enryption
+    * SSE-C - server side encryption; key managment by your own; no available in console, only API/CLI
+    * Client Side Enryption; not available in console, only API/CLI
+  * S3 Security
+    * User based (IAM policies)
+    * Resource Based - Bucket Policies, and (less common) Object Access List (ACL) and Bucket Access Control List (ACL)
+    * Note: IAM principal can acccess S3 object if either IAM permission OR resource policy allow, and no explicit DENY
+    * Bucket settings for Block Public Access - can also be set at account level
+  * CORS - Cross Origin Resource Sharing
 * Amazon **Glacier**
   * archives up to 40TB (single archive limit)
   * integrated with AWS CloudTrail
   * can use as a storage class in S3 via S3 API, or 'native' via Amazon Glacier API
+
   
 * **EBS**
   * EBS Volume Types
