@@ -89,6 +89,8 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
 #### EC2
 * EC2 Instance store -  disk type and capacity depends on instanct type
 ##### AMIs
+* one EC2 instance can only have _one_ IAM role attached at a time
+##### AMIs
 * Cross Acount AMI Copy [Maarek Slide #62](docs/AWS_Certified_Solutions_Architect_Slides_v3.6.pdf#page=62) / AWS documentation [Copying AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html)
 ##### EC2 Placement Groups
 * Three strategies
@@ -167,7 +169,42 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * 2 Performance mode: _General Purpose_ and _Max I/O_
   * Storage Tiers: _Standard_ and _Infrequent access (EFS-IA)_ (lower storage price, but cost to retrieve files)
 
+* **FSx**
+  * Amazon FSx for Windows - pay for the average amount of storage provisioned for your file systems per month; offers data de-duplication
+ * Amazon FSx for Lustre - POSIX compliant
+
+* **AWS Storage Gateway** (Hybrid Storage)
+  * 3 types:
+    * File Gateway - file-based; NFS/SMB; backed by S3
+    * Volume Gateway - iSCSI; Volume; SAN-like; data stored in S2; can backup volumes as EBS Snapshots
+    * Tape Gateway - VTL (
+
+
 _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html)
+
+
+#### Route 53
+* Most common records in AWS:
+  * **A** - hostname to IPv4
+  * **AAAA** - hostname to IPv6
+  * **CNAME** - hostname to hostname
+  * **Alias** - hostname to AWS resource
+* CNAME vs ALIAS - if root domain (<domain>.com) has to be ALIAS (free of charge) - only for aws resources; CNAME only work for non-root domains
+
+#### Load Balancers
+* Types:
+  * **Classic**, v1 (2009) - HTTP, HTTPS, TCP
+  * **Application (ALB)**, v2 (2016) - HTTP, HTTPS, WebSocket
+  * **Network**, v2 (2017) - TCP, TLS (secure TCP) & UDP
+* can be either external (public) or internal (private)
+* Troubleshooting / errors:
+  * 4xx - client induced errors
+  * 5xx - errors are application induced errors
+  * 503 means at capacity or no registered target
+  * if LB can’t connect to app - security groups!
+* IP / DNS
+  * **NLB** - one static IP per AZ; supports Elastic IPs
+  * **ALB/Classic** - no static IP, only static DNS hostname
 
 
 
