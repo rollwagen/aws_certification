@@ -99,6 +99,7 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * Partition - _partition_=set of racks; max 7 partitions per AZ; 100s of instances. EC instances can get access to pertition info via metadata
 
 #### Storage
+* __REVIEW__ IAM vs Bucker Policies vs ACL
 * **S3** - Simple Storage Service
   * bucket names: 3-63 characters long
   * objects have _key_; the _key_ is the full path
@@ -193,7 +194,7 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
 
 #### Load Balancers
 * Types:
-  * **Classic**, v1 (2009) - HTTP, HTTPS, TCP
+  * **Classic (CLB)**, v1 (2009) - HTTP, HTTPS, TCP
   * **Application (ALB)**, v2 (2016) - HTTP, HTTPS, WebSocket
   * **Network**, v2 (2017) - TCP, TLS (secure TCP) & UDP
 * can be either external (public) or internal (private)
@@ -205,8 +206,41 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
 * IP / DNS
   * **NLB** - one static IP per AZ; supports Elastic IPs
   * **ALB/Classic** - no static IP, only static DNS hostname
+* Cross-Zone Load Balancing
+  * Classic - default: disabled; no charges
+  * ALB - default: enabled; no charges
+  * NLB - default: disabled; charges!
+* SNI (Server Name Indication) only supported by ALB & NLB (not Classic); and CloudFront
 
 
+#### RDS (Relational Database Services)
+* Automated Backups: 7 days retention (max 35 days) _vs._ DB Snapshots: manually triggered; retention as long as you want
+* Transparent Data Encryption (TDE) available for Oracle and MS SQL Server
+* Read Replicas
+  * help scale _reads_; within AZs, cross AZs, or cross region; ASYNC !
+  * intra-/within AZ network cost; withing AZ for free
+  * can promote to 'real' DB
+* Multi AZ (Disaster recovery)
+  * once DNS name; SYNC replcation; standby DB _only_ standby
+  * Read Replicas can also be setup as Multi AZ (e.g. for DR)
+* Aurora
+  * Storage: auto expanding from 10G to 64TB
+  * Auto-scaling for read replicas
+  * Connection(s): Writer Endpoint and Reader Endpoint (loadbalancing at session/connection level)
+  * Aurora Serverless
+    * for infrequent or unpredictable workloads
+  * Aurora Global Database
+* RDS Databases ports:
+    * PostgreSQL: 5432
+    * MySQL / MariaDB: 3306
+    * Oracle RDS: 1521
+    * MSSQL Server: 1433
+    * Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+
+#### AWS ElastiCach
+* manged Redis or Memcached
+* support SSL in flight; do not support IAM authentication (IAM policies only for AWS API-level security)
+* Redis AUTH - password/token
 
 
 
