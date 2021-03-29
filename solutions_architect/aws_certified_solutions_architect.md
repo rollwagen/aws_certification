@@ -242,6 +242,34 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
 * support SSL in flight; do not support IAM authentication (IAM policies only for AWS API-level security)
 * Redis AUTH - password/token
 
+#### AWS Lambda
+* Limits (per region), see also [Lambda quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+  * Execution
+    * Memory allocation: 128 MB to 10,240 GB (1MB increments)
+    * Max. execution time: 15min (900sec)
+    * Environmetn variables: 4KB
+    * Concurrent executions: 1000 (can be increased)
+  * Deployment
+    * Deployment package size: 50MB (zipped), 250MB (unzipped)
+* Lambda@Edge - can use Lambda to change CloudFront requests and responses:
+  * After CloudFront receives a request from a viewer (viewer request)
+  * Before CloudFront forwards the request to the origin (origin request)
+  * After CloudFront receives the response from the origin (origin response)
+  * Before CloudFront forwards the response to the viewer (viewer response)
+
+#### API Gateway
+* Integrations
+  * _Lambda_ Function
+  * _HTTP_ - e.g. internal HTTP API (even on-prem), ALB etc
+  * _AWS_ Service - any AWS API
+* API Gateway Endpoint Types:
+    * Edge-Optimized (default) - requests routed though CloudFront edge; API GW still lived in one regtion
+    * Regional - can still if wanted be combined with CloudFround (manually)
+    * Private - only accessible from within VPC via VPC endpoint (ENI)
+* Security
+  * IAM Permissions - good for access within own infrastructure/AWS account; "Sig v4" (IAM credentials in headers); can't use outside AWS
+  * Lambda Authorizer (formerly Custom Authorizer) - uses Lambda for token validation; help with use of OAuth / SAML / 3rd party; Lambda msut return IAM policy for user
+  * Cognito User Pools - however, only helps with authentication, not authoriztion (must implement in backend)
 
 
 
