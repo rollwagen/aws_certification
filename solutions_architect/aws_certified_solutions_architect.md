@@ -256,6 +256,20 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
   * Before CloudFront forwards the request to the origin (origin request)
   * After CloudFront receives the response from the origin (origin response)
   * Before CloudFront forwards the response to the viewer (viewer response)
+* AWS SAM - Serverless Application Model
+  * develop / deploy serverless application
+  * all config is YAML code
+    * Lambda Function
+    * DynamoDB tables
+    * API Gateway
+    * Cognito User Pools
+   * can run Lambda, API GW, Dynamo DB locally
+   * can use CodeDeploy 
+
+#### Dynamo DB
+* Read Capacity Units (RCU) / Write Capacity Units (WCU)
+* DAX - DynamoDB Accelerator
+  * (Seamless) cache for Dynamo DB
 
 #### API Gateway
 * Integrations
@@ -271,7 +285,21 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
   * Lambda Authorizer (formerly Custom Authorizer) - uses Lambda for token validation; help with use of OAuth / SAML / 3rd party; Lambda msut return IAM policy for user
   * Cognito User Pools - however, only helps with authentication, not authoriztion (must implement in backend)
 
+#### AWS Cognito
+* 'give users an identity so they can interact with our application.'
+* Various products:
+  * Cognito User Pools (CPU) - sign in functionality for application users; integrated with API Gateway
+    * user pool is a user directory in Amazon Cognito
+  * Cognito Identiy Pools (Federated Identiy) - provide AWS credential to users to access AWS resources directly
+  * Cognito Sync - synchronize data from device to Cognito; replaced by AWS AppSync  (like deprecated soon)
 
+#### Monitoring / AWS CloudWatch
+* CloudWatch dashboards are global
+* (EC2) CloudWatch metric intervals:
+  * default: 5min
+  * detailed: 1min
+  * high-resolution: 1sec; only CustomMetrics via PutMetricData API
+* Cloud Watch alarms for High Resolution metrics can trigger max every 10sec
 
 ## 1.2 Design highly available and/or fault-tolerant architectures
 ## 1.3 Design decoupling mechanisms using AWS services
