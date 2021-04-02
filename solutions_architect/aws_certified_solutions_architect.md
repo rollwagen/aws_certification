@@ -15,7 +15,7 @@ From AWS learning (Exam Readiness Video):
 #### AWS Networking & VPCs
 
 * [AWS Networking Fundementals (re:invent 2019](https://www.youtube.com/watch?v=hiKPPy584Mg&t=96s)
-    * [Slides (pdf)](docs/aws-networking-fundamentals.pdf)
+  * [Slides (pdf)](docs/aws-networking-fundamentals.pdf)
 * [Amazon Virtual Private Cloud User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html)
 
 * **VPC related topic from detailed topic lists**
@@ -59,9 +59,9 @@ BANDWIDTH LIMIT     | N/A (intra-region) |  50Gbps per VPC attachment
 MANAGEMENT          | Decentralised      |  Centralised
 COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
 
-* **VPC Endpoints** - _enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the other service does not leave the Amazon network._
-  * Gateway endpoint (Gateway VPC endpoint) - used purely for S3 and Dynamo DB
-  * Interface endpoint (Interface VPC endpoint) - to connect to 'AWS Service APIs'
+* **VPC Endpoints** - _privately connect VPCs to supported AWS services and VPC endpoint services powered by AWS PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between VPC and the other service does not leave the AWS network._
+  * **Gateway endpoint** (Gateway VPC endpoint) - used purely for S3 and Dynamo DB
+  * **Interface endpoint** (Interface VPC endpoint) - to connect to 'AWS Service APIs'
     * VPC endpoint services (AWS PrivateLink)
   * Gateway Load Balancer endpoint
 
@@ -70,7 +70,7 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * can use a transit gateway or virtual private gateway as the gateway for the Amazon side of the Site-to-Site VPN connection
 
 
-* _Following notes are from All-in-One book_ **Chapter 3 Virtual Private Cloud** 
+* _Following notes are from All-in-One book_ **Chapter 3 Virtual Private Cloud**
   * CIDR range, anything between /16 (65,536 IPs), and /28 (16 IPs).
   * once you create a VPC, you can’t alter the size of it.
   * VPC is limited to a region,
@@ -88,10 +88,11 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
 
 #### EC2
 * EC2 Instance store -  disk type and capacity depends on instanct type
+
 ##### AMIs
 * one EC2 instance can only have _one_ IAM role attached at a time
-##### AMIs
 * Cross Acount AMI Copy [Maarek Slide #62](docs/AWS_Certified_Solutions_Architect_Slides_v3.6.pdf#page=62) / AWS documentation [Copying AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html)
+
 ##### EC2 Placement Groups
 * Three strategies
   * Cluster - low latency group in single AZ; smae rack same AZ. (+) low latency (+) 10GBps (-) rack fails, all gone
@@ -106,7 +107,7 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * max 5TB object size; upload max 5GB, must use 'multi part upload'
   * flat namespace
   * can track access requests via _access logging_
-  * 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket. 
+  * 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket.
   * S3 **Storage classes**
     * Standard - general purpose; 11 9s of durability; 99.99 availability
     * Standard-Infrequent Access (Standard-IA) - less frequently accesses, but rapid access when needed; 99.9 availability
@@ -172,7 +173,7 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
 
 * **FSx**
   * Amazon FSx for Windows - pay for the average amount of storage provisioned for your file systems per month; offers data de-duplication
- * Amazon FSx for Lustre - POSIX compliant
+  * Amazon FSx for Lustre - POSIX compliant
 
 * **AWS Storage Gateway** (Hybrid Storage)
   * 3 types:
@@ -231,8 +232,8 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
     * for infrequent or unpredictable workloads
   * Aurora Global Database
 * RDS Databases ports:
-    * PostgreSQL: 5432
-    * MySQL / MariaDB: 3306
+  * PostgreSQL: 5432
+  * MySQL / MariaDB: 3306
     * Oracle RDS: 1521
     * MSSQL Server: 1433
     * Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
@@ -263,8 +264,8 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
     * DynamoDB tables
     * API Gateway
     * Cognito User Pools
-   * can run Lambda, API GW, Dynamo DB locally
-   * can use CodeDeploy 
+  * can run Lambda, API GW, Dynamo DB locally
+  * can use CodeDeploy
 
 #### Dynamo DB
 * Read Capacity Units (RCU) / Write Capacity Units (WCU)
@@ -277,9 +278,9 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
   * _HTTP_ - e.g. internal HTTP API (even on-prem), ALB etc
   * _AWS_ Service - any AWS API
 * API Gateway Endpoint Types:
-    * Edge-Optimized (default) - requests routed though CloudFront edge; API GW still lived in one regtion
-    * Regional - can still if wanted be combined with CloudFround (manually)
-    * Private - only accessible from within VPC via VPC endpoint (ENI)
+  * Edge-Optimized (default) - requests routed though CloudFront edge; API GW still lived in one regtion
+  * Regional - can still if wanted be combined with CloudFround (manually)
+  * Private - only accessible from within VPC via VPC endpoint (ENI)
 * Security
   * IAM Permissions - good for access within own infrastructure/AWS account; "Sig v4" (IAM credentials in headers); can't use outside AWS
   * Lambda Authorizer (formerly Custom Authorizer) - uses Lambda for token validation; help with use of OAuth / SAML / 3rd party; Lambda msut return IAM policy for user
@@ -302,8 +303,8 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
 * Cloud Watch alarms for High Resolution metrics can trigger max every 10sec
 
 #### AWS WAF - Web Application Firewall
-  * can be deployed on _three_ services: Application Load Balancer (ALB), API Gateway (API GW), CloudFround
-  * AWS Firewall Manager - manage all rules in all acount in an AWS Organization
+* can be deployed on _three_ services: Application Load Balancer (ALB), API Gateway (API GW), CloudFround
+* AWS Firewall Manager - manage all rules in all acount in an AWS Organization
 
 ## 1.2 Design highly available and/or fault-tolerant architectures
 ## 1.3 Design decoupling mechanisms using AWS services
