@@ -178,7 +178,7 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
   * 3 types:
     * File Gateway - file-based; NFS/SMB; backed by S3
     * Volume Gateway - iSCSI; Volume; SAN-like; data stored in S2; can backup volumes as EBS Snapshots
-    * Tape Gateway - VTL (
+    * Tape Gateway - VTL (Virtual Tape Library)
 
 
 _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html)
@@ -300,6 +300,10 @@ _2 read_ [EBS IO Characteristics](https://docs.aws.amazon.com/AWSEC2/latest/User
   * detailed: 1min
   * high-resolution: 1sec; only CustomMetrics via PutMetricData API
 * Cloud Watch alarms for High Resolution metrics can trigger max every 10sec
+
+#### AWS WAF - Web Application Firewall
+  * can be deployed on _three_ services: Application Load Balancer (ALB), API Gateway (API GW), CloudFround
+  * AWS Firewall Manager - manage all rules in all acount in an AWS Organization
 
 ## 1.2 Design highly available and/or fault-tolerant architectures
 ## 1.3 Design decoupling mechanisms using AWS services
