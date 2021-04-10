@@ -42,7 +42,7 @@ Note: Doesn’t filter traffic to or from link-local addresses (169.254.0.0/16) 
 
 * **VPC Peering**
   * private IP connectivity
-  * can peer **across regtions** and **across accounts**
+  * can peer **across regions** and **across accounts**
   * VPC CIDR ranges **must not overlap**
   * Only one-to-one connections (e.g. no traversing)
   * 125 max peerings
@@ -95,9 +95,9 @@ COST DIMENSIONS     | Data Transfer      |  Data Transfer & Attachment
 
 ##### EC2 Placement Groups
 * Three strategies
-  * Cluster - low latency group in single AZ; smae rack same AZ. (+) low latency (+) 10GBps (-) rack fails, all gone
+  * Cluster - low latency group in single AZ; same rack same AZ. (+) low latency (+) 10GBps (-) rack fails, all gone
   * Spread - across underlying HW (max 7 instances per group per AZ), each instance on different HW. (+) can span across AZs
-  * Partition - _partition_=set of racks; max 7 partitions per AZ; 100s of instances. EC instances can get access to pertition info via metadata
+  * Partition - _partition_=set of racks; max 7 partitions per AZ; 100s of instances. EC instances can get access to partition info via metadata
 
 #### Storage
 * __REVIEW__ IAM vs Bucker Policies vs ACL
