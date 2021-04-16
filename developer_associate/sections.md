@@ -13,10 +13,10 @@ P lease watch the following lectures:
 - [ ] Section 16: AWS CloudFormation
 - [ ] Section 17: AWS Monitoring & Audit: CloudWatch, X-Ray and CloudTrail
 - [ ] Section 18: AWS Integration & Messaging: SQS, SNS & Kinesis
-- [ ] Section 19: AWS Serverless: Lambda
-- [ ] Section 20: AWS Serverless: DynamoDB
-- [ ] Section 21: AWS Serverless: API Gateway
-- [ ] Section 22: AWS Serverless: SAM - Serverless Application Model
+- [X] Section 19: AWS Serverless: Lambda _2h31m_ **Quiz not done yet**
+- [ ] Section 20: AWS Serverless: DynamoDB _1h33m_
+- [ ] Section 21: AWS Serverless: API Gateway _1h22m_
+- [ ] Section 22: AWS Serverless: SAM - Serverless Application Model _48m_
 - [ ] Section 23: Cognito: Cognito User Pools, Cognito Identity Pools & Cognito Sync
 - [ ] Section 24: Other Serverless: Step Functions & AppSync
 - [ ] Section 25: Advanced Identity
