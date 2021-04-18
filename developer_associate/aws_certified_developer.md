@@ -77,10 +77,26 @@ Lambda in VPN
  
 - Global Secondary Index - GSI
   - if the writes are throttled on the GSI, then the main table will be throttled!
+- Local Secondary Index - LSI:
+  - Uses the WCU and RCU of the main table
+  - No special throttling considerations
 
 - DynamoDB Streams
   - stream has 24h of data retention
   - records are not retroactively populated
+  - stream options
+    - `KEYS_ONLY` — Only the key attributes of the modified item.
+    - `NEW_IMAGE` — The entire item, as it appears after it was modified.
+    - `OLD_IMAGE` — The entire item, as it appeared before it was modified.
+    - `NEW_AND_OLD_IMAGES` — Both the new and the old images of the item
+
+- DynamoDB TTL (Time to Live)
+  - automatically delete an item after an expiry date / time
+  - no extra cost, deletions do not use WCU / RCU
+
+- DynamoDB CLI
+
+
 
 
 
