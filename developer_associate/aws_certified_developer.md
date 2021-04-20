@@ -96,8 +96,35 @@ Lambda in VPN
 
 - DynamoDB CLI
 
+## Elastic Beanstalk
+- Deployment Modes
+  - Single Intance - for dev
+  - High Availability with LB - for prod
+- Deployments Options for Update
+  - All at once - will stop and (re-)deploy new app version on existing instances; quick; no add'tl cost
+  - Rolling - bucket size ('batches') can be set, no add'tl cost, long
+  - Rolling iwth additional batches
+  - Immutable
+- [AWS Doc - Elastic Beanstalk Deployment Summary](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html)
 
+## AWS CICD: CodeCommit, CodePipeline, CodeBuild, CodeDeploy
 
+### AWS Code Commit
+- Notifications
+  - **SNS / AWS Lambda**
+    - Push to main branch, Branch deletion, trigger/notify external build system or Lambda (e.g. to run static code analysis for credentials)
+  - **Cloud Watch Event Rules**
+    - Trigger for pull request activities (create, update, delete,comment)
+    - triggered events will go into SNS topic
+
+### AWS Code Deploy
+- order of hooks in appspec.yaml
+  - ApplicationStop
+  - DownloadBundle
+  - BeforeInstall
+  - AfterInstall
+  - ApplicationStart
+  - ValidateService
 
 
 
