@@ -117,6 +117,9 @@ Lambda in VPN
     - Trigger for pull request activities (create, update, delete,comment)
     - triggered events will go into SNS topic
 
+### AWS Code Pipeline
+  - CodePipeline state changes happen in _AWS CloudWatch Events_, which can in return create SNS notifications.
+
 ### AWS Code Deploy
 - order of hooks in appspec.yaml
   - ApplicationStop
@@ -128,6 +131,20 @@ Lambda in VPN
 
 
 
+## AWS Cloud Formation
+- Functions
+  - !Ref - reference a parameter or resource (physical ID), e.g. a vpc id for a vpc reference
+  - !Fn::GetAtt - attribues for resources e.g. for an ec2 instance AZ `!GetAtt EC2Instance.AvailabilityZone`
+  - Fn::FindInMap - return a names value from a specific key 
+  - Fn::ImportValue - import values that are exported in other cf templates
+  - Fn::Join - join values with a delimiter e.g. `!Join[ ":", [ a, b, c]` creates "a:b:c"
+  - Fn::Sub - short for 'substitute' 
+  - Condition Functions (Fn::If, Fn::Not, Fn::Equals, etc...)
 
-## AWS Serverless Application Model (SAM)
-
+## AWS Monitoring & Audit: CloudWatch, X-Ray & Cloudtrail
+- EC2
+  - Standard 5min
+  - Detailed 1min
+- Custom Metrics
+  - Standard 1min
+  - High Resolution: 1 second  (_StorageResolution_ API param)
