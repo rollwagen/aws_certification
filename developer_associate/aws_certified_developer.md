@@ -9,7 +9,11 @@
 - December 2020: AWS Lambda changes duration billing granularity from 100ms down to 1ms 
 - `tmp` directory max temp space is 512MB
 - dependencies: if <=50MB upload straight to Lambda; if more then S3
-- concurrency: up to 1000; limit applies across whole account; limit/control with _reserved concurrency_
+- **concurrency**
+  - up to 1000 per second; limit applies across whole account per region (???); burst up to 3000
+  - limit/control with _reserved concurrency_
+    - AWS keeps unreserved concurrency pool at a min. of 100 concurrent executions so functions witout specific limits set can still process requests. Hence, can only allocate a concurrent execution limit of 900 max for a single Lambda function or 450 for two functions.
+  - estimate capacity: `concurrent executions = (invocations per second) x (average execution duration in seconds)`
 - _provisioned concurrency_ - concurrency is allocated before funcion is invoked (no cold start)
 - to expose a Lambda function as an HTTP(S) endpoint, two options; both invoke synchroniously
   1. ALB (Applicatio Load Balancer) _or_
@@ -35,22 +39,29 @@
   - Amazon Simple Notification Service (SNS)
   - Amazon CloudWatch Events / EventBridge
 
-
-Event Source Mapping
-• Kinesis Data Streams
-• SQS & SQS FIFO queue
-• DynamoDB Streams
-• Common denominator: records need to be polled from the source
-• Your Lambda function is invoked synchronously
+- Event Source Mapping
+  - Kinesis Data Streams
+  - SQS & SQS FIFO queue
+  - DynamoDB Streams
+  - Common denominator: records need to be polled from the source
+  - Your Lambda function is invoked synchronously
 
 SQS To use a DLQ
 • set-up on the SQS queue, not Lambda (DLQ for Lambda is only for async invocations)
 • Or use a Lambda destination for failures
 
-Lambda in VPN
+Lambda in VPC
 - a Lambda function in your VPC does not have internet access
 - deploying a Lambda function in a public subnet does not give it internet access or a public IP
 - deploying a Lambda function in a private subnet gives it internet access if you have a NAT Gateway / Instance
+
+- API 'Invoke' call; InvocationType:
+  - RequestResponse (default) - synchronously
+  - Event - asynchronously
+  - DryRun - Validate parameter values and verify that the user or role has permission to invoke the function.
+
+- X-Ray environment varibles (Lambda):
+  - `_X_AMZN_TRACE_ID`, `AWS_XRAY_CONTEXT_MISSING`, `AWS_XRAY_DAEMON_ADDRESS`
 
 ## AWS Serverless: DynamoDB
 - items/rows; max size of an item is 400KB
@@ -74,6 +85,7 @@ Lambda in VPN
     - _GetItem_ - read based on Primary key, use 'ProjectionExpression' to only retrieve specific attributes
   - Query - returns items based on PartitionKey (must be **=** operator); SortKey, FilterExpression (client side!)
   - Scan - inefficient; scans entire table and then filter data; will consume a lot of RCUDeleteItem
+    - to minimize scan impact: **Reduce page size**: smaller page size uses fewer read operations and creates a “pause” between each request.
  
 - Global Secondary Index - GSI
   - if the writes are throttled on the GSI, then the main table will be throttled!
@@ -95,6 +107,10 @@ Lambda in VPN
   - no extra cost, deletions do not use WCU / RCU
 
 - DynamoDB CLI
+
+## Elasticache
+- Redis vs Memcached
+  - Single/multithreading - commands execution, Redis is mostly a single-threaded server; not designed to benefit from multiple CPU cores unlike Memcached (however, can launch several Redis instances to scale out on several cores if needed.)
 
 ## Elastic Beanstalk
 - Deployment Modes
@@ -121,16 +137,29 @@ Lambda in VPN
   - CodePipeline state changes happen in _AWS CloudWatch Events_, which can in return create SNS notifications.
 
 ### AWS Code Deploy
-- order of hooks in appspec.yaml
+- order of hooks in appspec.yaml for **EC2** or on-prem instances (both with CodeDeploy agent
   - ApplicationStop
   - DownloadBundle
   - BeforeInstall
   - AfterInstall
   - ApplicationStart
   - ValidateService
+- order of hooks in appsepc.yaml for **Lambda**
+  - BeforeAllowTraffic
+  - AfterAllowTraffic
+- order of hooks in appsepc.yaml for **ECS**
+  - BeforeInstall
+  - AfterInstall
+  - AfterAllowTestTraffic
+  - BeforeAllowTraffic
+  - AfterAllowTraffic
 
-
-
+## SAM
+- integrated with _CodeDeploy_
+- traffic shifting options when deploying
+  - _Canary_: Traffic is shifted in two increments. 
+  - _Linear_: Traffic is shifted in equal increments with an equal number of minutes between each increment
+  - _All-at-once_: All traffic is shifted from the original Lambda function to the updated Lambda function version at once.
 ## AWS Cloud Formation
 - Functions
   - !Ref - reference a parameter or resource (physical ID), e.g. a vpc id for a vpc reference
@@ -142,9 +171,42 @@ Lambda in VPN
   - Condition Functions (Fn::If, Fn::Not, Fn::Equals, etc...)
 
 ## AWS Monitoring & Audit: CloudWatch, X-Ray & Cloudtrail
+### CloudWatch
 - EC2
   - Standard 5min
   - Detailed 1min
 - Custom Metrics
-  - Standard 1min
+  - Standard/default: 1min = 60s
   - High Resolution: 1 second  (_StorageResolution_ API param)
+### CloudWatch Alarms
+- Metric _evaluation period_
+  - High resolution custom metrics can only choose either 10s or 30s
+- When creating an alarm, three settings
+  – **Period** - length of time to evaluate the metric or expression to create each individual data point for an alarm.
+  – **Evaluation Period** - number of the most recent periods, or data points, to evaluate when determining alarm state.
+  – **Datapoints to Alarm** - number of data points within the evaluation period that must be breaching to cause ALARM state
+
+### X-Ray
+- How to enable:
+  1. code must import the AWS X-Ray SDK (Java, Python, Go Node.js, .NET)
+    - application SDK will capture
+      - calls to AWS services, HTTP(S) requets, database calls, queue calls (SQS)
+  2. Install the X-Ray daemon or enable X-Ray AWS Integration
+    - agent is a low level packet inspector
+    - AWS Lamba and other AWS services alrealdy run X-Ray daemon
+    - each app needs respective IAM rights to write to X-Ray
+- **Annotations** - key-value pairs (fields) that are indxed for use with filter expressions; fields can have string, number, or Boolean values (no objects or arrays)
+- **Metadata** - key-value pairs (fields) with any type value, including objects and arrays; _not indexed_
+
+  
+### CloudTrail
+- Three type of Cloudtrail Events:
+  - **Managment Events**; separate for Read Events and Write Events
+  - **Data Events**; by default not logged e.g. S3 object level activity such as GetObject, PutObject; separate for Read Events and Write Events 
+  - **Insights Events**
+
+## API Gateway
+- Metrics; common ones for monitoring (CloudWatch):
+  - **IntegrationLatency** measure the responsiveness of the backend.
+  - **Latency**  measure the overall responsiveness of your API calls.
+  - **CacheHitCount** and **CacheMissCount** optimize cache capacities to achieve a desired performance.
