@@ -12,7 +12,7 @@
 - **concurrency**
   - up to 1000 per second; limit applies across whole account per region (???); burst up to 3000
   - limit/control with _reserved concurrency_
-    - AWS keeps unreserved concurrency pool at a min. of 100 concurrent executions so functions witout specific limits set can still process requests. Hence, can only allocate a concurrent execution limit of 900 max for a single Lambda function or 450 for two functions.
+    - AWS keeps unreserved concurrency pool at a min. of 100 concurrent executions so functions w/o specific limits can still process requests; so can only allocate a concurrent exec. limit of 900max for a single function (or 450 for two)
   - estimate capacity: `concurrent executions = (invocations per second) x (average execution duration in seconds)`
 - _provisioned concurrency_ - concurrency is allocated before funcion is invoked (no cold start)
 - to expose a Lambda function as an HTTP(S) endpoint, two options; both invoke synchroniously
@@ -34,12 +34,12 @@
     - uncompressed deployment 250MB
     - env variables 4KB
 
-- Asynchronous invocation relevant for exam:
+- _Asynchronous_ invocation relevant for exam:
   - Amazon Simple Storage Service (S3)
   - Amazon Simple Notification Service (SNS)
   - Amazon CloudWatch Events / EventBridge
 
-- Event Source Mapping
+- Event Source Mapping (_synchronous b/c poll-based event source_)
   - Kinesis Data Streams
   - SQS & SQS FIFO queue
   - DynamoDB Streams
@@ -89,9 +89,12 @@ Lambda in VPC
  
 - Global Secondary Index - GSI
   - if the writes are throttled on the GSI, then the main table will be throttled!
+  - can be added later (i.e. after creation)
+  - strongly consistent reads _not_ supported by GSIs
 - Local Secondary Index - LSI:
   - Uses the WCU and RCU of the main table
   - No special throttling considerations
+  - LSI must be defined at table creation time
 
 - DynamoDB Streams
   - stream has 24h of data retention
@@ -101,6 +104,7 @@ Lambda in VPC
     - `NEW_IMAGE` — The entire item, as it appears after it was modified.
     - `OLD_IMAGE` — The entire item, as it appeared before it was modified.
     - `NEW_AND_OLD_IMAGES` — Both the new and the old images of the item
+  - stream processing via Lambda (poll, recommended b/c serverless) or Kinesis Client Library (KCL) on EC2
 
 - DynamoDB TTL (Time to Live)
   - automatically delete an item after an expiry date / time
@@ -196,7 +200,9 @@ Lambda in VPC
     - AWS Lamba and other AWS services alrealdy run X-Ray daemon
     - each app needs respective IAM rights to write to X-Ray
 - **Annotations** - key-value pairs (fields) that are indxed for use with filter expressions; fields can have string, number, or Boolean values (no objects or arrays)
+  - Segments and subsegments can include an annotations
 - **Metadata** - key-value pairs (fields) with any type value, including objects and arrays; _not indexed_
+  - Segments and subsegments can include a metadata 
 
   
 ### CloudTrail
