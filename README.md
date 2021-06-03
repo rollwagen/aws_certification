@@ -11,7 +11,7 @@ Score: 892
 
 ## AWS Certified Developer – Associate
 
-* [Overview, study material links etc (markdown](developer_associate/developer.md)
+* [Overview, study material links etc (markdown)](developer_associate/developer.md)
 * [Notes (markdown)](developer_associate/aws_certified_developer.md)
 * [Folder](developer_associate)
 
