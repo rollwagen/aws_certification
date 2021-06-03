@@ -2,7 +2,7 @@
 
 ## AWS Certified Solutions Architect – Associate (SAA-C02)
 
-* [Overview, study material links etc (markdown](solutions_architect/solutions_architect.md)
+* [Overview, study material links etc (markdown)](solutions_architect/solutions_architect.md)
 * [Notes (markdown)](solutions_architect/aws_certified_solutions_architect.md)
 * [Folder](solutions_architect)
 
