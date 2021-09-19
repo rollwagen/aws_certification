@@ -28,4 +28,4 @@ Score: 971
 
 ## AWS Certified SysOps Administrator – Associate (SOA-C02)
 
-* [Notes (markdown](sysops_administrator/sysops_administrator.md)
+* [Notes (markdown)](sysops_administrator/sysops_administrator.md)
