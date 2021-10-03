@@ -2,8 +2,8 @@
 
 ## AWS Certified Solutions Architect – Associate (SAA-C02)
 
-* [Overview, study material links etc (markdown)](solutions_architect/solutions_architect.md)
-* [Notes (markdown)](solutions_architect/aws_certified_solutions_architect.md)
+* [Overview, study material links etc (markdown)](solutions_architect_associate/solutions_architect.md)
+* [Notes (markdown)](solutions_architect_associate/aws_certified_solutions_architect.md)
 * [Folder](solutions_architect)
 
 [![SAA-C02](https://images.credly.com/size/100x100/images/4bc21d8b-4afe-4fbd-9a90-a9de8bf7b240/AWS-SolArchitect-Associate-2020.png)](https://www.credly.com/badges/60f7f158-f792-4bde-ba87-736bb49d68b5)
